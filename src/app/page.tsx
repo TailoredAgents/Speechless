@@ -79,21 +79,6 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="sl-tommy sl-tommy--editorial">
-        <div className="sl-tommy__photo-reserve" role="img" aria-label="Reserved space for an approved photograph of Tommy or his family">
-          <span>Family photograph</span>
-          <strong>Reserved for<br />Tommy’s story.</strong>
-          <small>Image added only with family approval</small>
-        </div>
-        <div className="sl-tommy__copy">
-          <p className="sl-kicker">The beginning</p>
-          <h2>This started<br />with Tommy.</h2>
-          <p>Tommy loves people. He loves being out in his community. And while he doesn’t communicate through spoken words, he has his own ways of connecting with the world.</p>
-          <p>Speechless began with his family’s hope that a little more understanding could make everyday moments better.</p>
-          <Link href="/our-story" className="sl-button sl-button--ink">Read the confirmed story <ArrowRight size={17} /></Link>
-        </div>
-      </section>
-
       <section className="sl-section sl-paths shell shell--wide">
         <div className="sl-heading"><div><p className="sl-kicker">Shop by perspective</p><h2>Choose the message<br />that fits.</h2></div><p>These paths organize four relevant products. They are not separate invented collections or assumptions about who should wear what.</p></div>
         <div className="sl-path-grid sl-path-grid--product">
