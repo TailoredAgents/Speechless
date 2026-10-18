@@ -1,6 +1,6 @@
 import { eq } from "drizzle-orm";
 import { collections, products } from "../src/data/products";
-import { getDb } from "../src/lib/db";
+import { getDb } from "../src/lib/db/client";
 import { collectionsTable, productComfortAttributes, productImages, productsTable } from "../src/lib/db/schema";
 
 async function seed() {
