@@ -70,7 +70,7 @@ node scripts/render-product-mockups.mjs
 - `src/app/refresh.css` — current Speechless visual system
 - `src/lib/db/schema.ts` — PostgreSQL schema
 - `public/images/` — original campaign and garment concept assets
-- `public/images/speechless-hero-more-than-words-v2.png` — current exact-art social-sharing campaign image
+- `public/images/speechless-hero-more-than-words-v3.png` — current exact-art social-sharing campaign image
 - `OWNER_CHECKLIST.md` — decisions required to turn the preview into a real store
 - `DEPLOYMENT.md` — Render deployment guidance
 

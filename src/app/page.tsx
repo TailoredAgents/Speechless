@@ -7,8 +7,8 @@ import { getCatalogProducts } from "@/lib/catalog";
 
 const paths = [
   { number: "01", title: "For me", copy: "Messages chosen by people who communicate beyond spoken words.", href: "/collections/for-me", image: "/images/speechless-nonverbal-flat-v2.png" },
-  { number: "02", title: "For someone I love", copy: "Supportive designs that do not speak over the person at the heart of them.", href: "/collections/family-caregivers", image: "/images/speechless-supporter-back-v2.png" },
-  { number: "03", title: "For the community", copy: "Fashion-first reminders that communication takes many forms.", href: "/collections/community-allies", image: "/images/speechless-fashion-portrait-v2.png" },
+  { number: "02", title: "For someone I love", copy: "Supportive designs that do not speak over the person at the heart of them.", href: "/collections/family-caregivers", image: "/images/speechless-supporter-back-v3.png" },
+  { number: "03", title: "For the community", copy: "Fashion-first reminders that communication takes many forms.", href: "/collections/community-allies", image: "/images/speechless-fashion-portrait-v3.png" },
 ];
 
 const productPromises = [
@@ -25,7 +25,7 @@ export default async function Home() {
   return (
     <>
       <section className="sl-hero sl-hero--lifestyle sl-hero--canonical">
-        <Image src="/images/speechless-hero-more-than-words-v2.png" alt="Adult fashion model wearing the conceptual More Than Words T-shirt" fill sizes="100vw" priority />
+        <Image src="/images/speechless-hero-more-than-words-v3.png" alt="Young adult wearing the conceptual More Than Words T-shirt" fill sizes="100vw" priority />
         <div className="sl-hero__wash" />
         <div className="shell shell--wide sl-hero__inner">
           <div className="sl-hero__copy">
@@ -67,7 +67,7 @@ export default async function Home() {
 
       <section className="sl-editorial shell shell--wide">
         <div className="sl-editorial__image">
-          <Image src="/images/speechless-fashion-portrait-v2.png" alt="Adult fashion model wearing the conceptual Speech Isn't the Only Way T-shirt" fill sizes="(max-width: 820px) 100vw, 46vw" />
+          <Image src="/images/speechless-fashion-portrait-v3.png" alt="Young adult wearing the conceptual Speech Isn't the Only Way T-shirt" fill sizes="(max-width: 820px) 100vw, 46vw" />
         </div>
         <div className="sl-editorial__copy">
           <p className="sl-kicker">Worn with intention</p>
@@ -75,7 +75,7 @@ export default async function Home() {
           <p>A clear message can offer useful context or ask for patience before an interaction begins. A quieter message can simply remind the people around us that speech is not the only way to connect.</p>
           <p>The first collection makes room for both—without assuming every wearer wants to disclose the same thing.</p>
           <Link href="/our-approach" className="sl-button sl-button--ink">How the messages are chosen <ArrowRight size={17} /></Link>
-          <small>Concept photography uses adult fashion models and does not represent or imply anyone’s diagnosis.</small>
+          <small>Concept photography does not represent or imply anyone’s diagnosis.</small>
         </div>
       </section>
 
