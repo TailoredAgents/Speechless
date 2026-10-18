@@ -10,7 +10,7 @@
 ## Deploy the Blueprint
 
 1. In Render, create a new **Blueprint** and connect the repository.
-2. Render reads `render.yaml` and proposes one Node.js web service plus one PostgreSQL database.
+2. Render reads `render.yaml` and proposes one always-on `0.5c-512mb` Node.js web service (currently $7/month) plus one Free PostgreSQL database.
 3. Supply the prompted values:
    - `ADMIN_EMAIL`
    - `ADMIN_PASSWORD`
