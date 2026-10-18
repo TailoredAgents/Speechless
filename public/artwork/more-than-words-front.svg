@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 900" role="img" aria-labelledby="title desc">
+  <title id="title">More Than Words front artwork</title>
+  <desc id="desc">Oversized black, cobalt, and coral stacked typography reading More Than Words.</desc>
+  <g font-family="Arial, Helvetica, sans-serif" font-weight="900" text-anchor="middle">
+    <text x="400" y="72" fill="#171717" font-size="25" letter-spacing="8">SPEECHLESS / 01</text>
+    <rect x="84" y="112" width="632" height="10" rx="5" fill="#171717"/>
+    <text x="400" y="340" fill="#171717" font-size="205">MORE</text>
+    <g transform="rotate(-2 400 500)">
+      <rect x="64" y="363" width="672" height="185" rx="8" fill="#2454D8"/>
+      <text x="400" y="521" fill="#F6EEDF" font-size="178">THAN</text>
+    </g>
+    <text x="400" y="758" fill="#E96845" font-size="166">WORDS</text>
+    <text x="400" y="840" fill="#171717" font-size="20" letter-spacing="5">COMMUNICATION HAS MANY FORMS</text>
+  </g>
+</svg>

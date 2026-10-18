@@ -1,0 +1,34 @@
+services:
+  - type: web
+    name: speechless-web
+    runtime: node
+    plan: free
+    buildCommand: npm ci --include=dev --legacy-peer-deps && npm run build
+    startCommand: npm run start:render
+    healthCheckPath: /api/health
+    autoDeployTrigger: commit
+    envVars:
+      - key: NODE_VERSION
+        value: 22.19.0
+      - key: NODE_ENV
+        value: production
+      - key: NEXT_PUBLIC_SITE_URL
+        sync: false
+      - key: DATABASE_URL
+        fromDatabase:
+          name: speechless-db
+          property: connectionString
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: COMMERCE_PROVIDER
+        value: disabled
+
+databases:
+  - name: speechless-db
+    plan: free
+    databaseName: speechless
+    user: speechless_admin

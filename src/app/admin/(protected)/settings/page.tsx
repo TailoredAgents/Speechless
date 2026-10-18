@@ -1,0 +1,5 @@
+import { Database, Mail, ShoppingBag } from "lucide-react";
+import { SettingsEditor } from "@/components/admin/settings-editor";
+import { getSettings } from "@/lib/admin-data";
+import { hasDatabase } from "@/lib/db";
+export default async function SettingsPage(){const rows=await getSettings();const settings=Object.fromEntries(rows.map(row=>[row.key,String(row.value??"")]));return <><header className="admin-page-header"><div><p className="admin-kicker">Configuration</p><h1>Settings</h1><p>Central brand controls, operating mode, and connection status.</p></div></header><section className="admin-connection-grid"><article><Database/><div><strong>PostgreSQL</strong><span>{hasDatabase()?"Connected":"Not connected"}</span></div></article><article><ShoppingBag/><div><strong>Commerce</strong><span>Not connected</span></div></article><article><Mail/><div><strong>Email provider</strong><span>Not connected</span></div></article></section><SettingsEditor settings={settings} connected={hasDatabase()}/></>}

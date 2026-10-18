@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 900" role="img" aria-labelledby="title desc">
+  <title id="title">Different Communication, Same Respect back artwork</title>
+  <desc id="desc">Large cream, cobalt, and coral back statement reading Different Communication. Same Respect.</desc>
+  <g font-family="Arial, Helvetica, sans-serif" font-weight="900" text-anchor="middle">
+    <text x="400" y="86" fill="#F2B632" font-size="24" letter-spacing="7">SPEECHLESS / 03</text>
+    <text x="400" y="252" fill="#F6EEDF" font-size="102">DIFFERENT</text>
+    <text x="400" y="391" fill="#2454D8" font-size="70">COMMUNICATION.</text>
+    <line x1="75" y1="457" x2="725" y2="457" stroke="#E96845" stroke-width="14"/>
+    <text x="400" y="632" fill="#F6EEDF" font-size="142">SAME</text>
+    <text x="400" y="784" fill="#E96845" font-size="108">RESPECT.</text>
+    <circle cx="400" cy="851" r="18" fill="#F2B632"/>
+  </g>
+</svg>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 900" role="img" aria-labelledby="title desc">
+  <title id="title">I'm nonverbal, I still communicate front artwork</title>
+  <desc id="desc">Large cream, cobalt, and coral type reading I'm nonverbal. I still communicate.</desc>
+  <g font-family="Arial, Helvetica, sans-serif" font-weight="900">
+    <text x="74" y="94" fill="#E96845" font-size="30" letter-spacing="7">SPEECHLESS / 02</text>
+    <text x="68" y="282" fill="#F6EEDF" font-size="108">I'M</text>
+    <text x="400" y="426" fill="#F6EEDF" font-size="96" text-anchor="middle">NONVERBAL.</text>
+    <rect x="68" y="468" width="664" height="12" rx="6" fill="#2454D8"/>
+    <text x="68" y="616" fill="#E96845" font-size="112">I STILL</text>
+    <text x="400" y="755" fill="#F6EEDF" font-size="76" text-anchor="middle">COMMUNICATE.</text>
+    <text x="72" y="838" fill="#F6EEDF" font-size="20" letter-spacing="5">PLEASE GIVE ME TIME</text>
+    <circle cx="697" cy="824" r="19" fill="#F2B632"/>
+  </g>
+</svg>
