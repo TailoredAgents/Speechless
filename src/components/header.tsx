@@ -30,10 +30,6 @@ export function Header() {
 
   return (
     <>
-      <div className="announcement">
-        <span>Private founder preview</span>
-        <span className="announcement__desktop">Founding collection preview · Adult tees · Checkout demo</span>
-      </div>
       <header className="site-header">
         <div className="site-header__inner shell shell--wide">
           <button className="mobile-menu-button" onClick={() => setMenuOpen(true)} aria-label="Open menu" aria-expanded={menuOpen} aria-controls="mobile-navigation">

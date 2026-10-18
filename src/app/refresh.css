@@ -30,7 +30,6 @@ body { background: var(--sl-cream); color: var(--sl-ink); }
 .sl-section { padding-block: clamp(5.5rem, 9vw, 9.5rem); }
 
 /* Brand chrome */
-.announcement { height: 2.25rem; background: var(--sl-cobalt); color: white; font-size: .63rem; font-weight: 800; }
 .site-header { height: 5.65rem; background: rgba(246, 238, 223, .96); border-bottom-color: var(--sl-line); }
 .site-header__inner { grid-template-columns: 15rem 1fr auto; }
 .wordmark { display: inline-flex; align-items: center; gap: .32rem; font-size: 1.32rem; font-weight: 900; letter-spacing: .1em; }
@@ -44,7 +43,7 @@ body { background: var(--sl-cream); color: var(--sl-ink); }
 .mobile-menu { background: var(--sl-cream); }
 
 /* Campaign hero */
-.sl-hero { position: relative; min-height: calc(100svh - 7.9rem); overflow: hidden; background: var(--sl-cream); }
+.sl-hero { position: relative; min-height: calc(100svh - 5.65rem); overflow: hidden; background: var(--sl-cream); }
 .sl-hero > img { object-fit: cover; object-position: center; }
 .sl-hero__wash { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(246,238,223,.26) 0%, rgba(246,238,223,.08) 42%, transparent 56%); }
 .sl-hero__inner { position: relative; min-height: inherit; display: flex; align-items: center; }
@@ -310,7 +309,7 @@ body { background: var(--sl-cream); color: var(--sl-ink); }
 }
 
 @media (max-width: 760px) {
-  .announcement { justify-content: center; }.site-header__inner { grid-template-columns: 3rem 1fr 5rem; }.wordmark { font-size: 1rem; }.header-shop-button { display: none; }
+  .site-header__inner { grid-template-columns: 3rem 1fr 5rem; }.wordmark { font-size: 1rem; }.header-shop-button { display: none; }
   .sl-hero { min-height: 46rem; }.sl-hero > img { object-position: 66% center; }.sl-hero__wash { background: linear-gradient(90deg, rgba(246,238,223,.96) 0%, rgba(246,238,223,.78) 46%, rgba(246,238,223,.08) 100%); }.sl-hero__copy { width: 75%; padding-left: 1vw; }.sl-hero h1 { font-size: clamp(4.1rem, 17vw, 6.2rem); }.sl-hero__copy > p:not(.sl-kicker) { font-size: .9rem; }.sl-hero__stamp { display: none; }.sl-hero__art { left: 65%; top: 30%; width: 21%; opacity: .42; }
   .sl-belief-bar { justify-content: flex-start; overflow-x: auto; white-space: nowrap; }.sl-belief-bar span { flex: 0 0 auto; }
   .sl-heading { grid-template-columns: 1fr; gap: 1.4rem; }.sl-heading h2 { font-size: 3.8rem; }

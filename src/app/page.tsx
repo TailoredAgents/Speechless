@@ -36,7 +36,7 @@ export default async function Home() {
               <Link href="/shop" className="sl-button sl-button--ink">Explore the four designs <ArrowRight size={18} /></Link>
               <Link href="/our-story" className="sl-button sl-button--text">Why this started</Link>
             </div>
-            <div className="sl-hero__proof"><span>Adult-first</span><span>Exact artwork system</span><span>Founder preview</span></div>
+            <div className="sl-hero__proof"><span>Adult-first</span><span>Exact artwork system</span><span>Community-centered</span></div>
           </div>
           <div className="sl-hero__stamp" aria-hidden="true"><span>SPEECHLESS</span><strong>04</strong><small>CORE<br />CONCEPTS</small></div>
         </div>
