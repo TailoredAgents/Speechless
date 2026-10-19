@@ -14,7 +14,7 @@ export async function POST(request: Request) {
   const parsed = contactSchema.safeParse(payload);
   if (!parsed.success) return NextResponse.json({ message: "Please complete each required field." }, { status: 400 });
   const db = getDb();
-  if (!db) return NextResponse.json({ preview: true, message: "Preview mode is active, so this message was not stored. Connect PostgreSQL to enable inquiries." });
+  if (!db) return NextResponse.json({ preview: true, message: "Messages are temporarily unavailable. Please try again later." });
   const { firstName, lastName, email, topic, message } = parsed.data;
   await db.insert(contactInquiries).values({ firstName, lastName, email, topic, message });
   await db.insert(analyticsEvents).values({ event: "contact_submission", path: "/contact" });

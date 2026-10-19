@@ -43,7 +43,7 @@ export default function ApproachPage() {
       <section className="sl-approach-cta">
         <p className="sl-kicker">Start a better conversation</p>
         <h2>Wear the message.<br />Live the meaning.</h2>
-        <Link href="/shop" className="sl-button sl-button--cream">Review the four concepts <ArrowRight size={17} /></Link>
+        <Link href="/shop" className="sl-button sl-button--cream">Explore the four designs <ArrowRight size={17} /></Link>
       </section>
     </>
   );

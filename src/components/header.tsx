@@ -2,24 +2,26 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, ShoppingBag, X } from "lucide-react";
-import { useEffect, useState } from "react";
+import { Heart, Menu, X } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 import { Wordmark } from "@/components/wordmark";
 import { useStore } from "@/components/store-provider";
 import { brand } from "@/config/brand";
 
 const navItems = [
   { label: "Shop", href: "/shop" },
-  { label: "Founding Drop", href: "/shop#catalog" },
+  { label: "Find Your Message", href: "/comfort-finder" },
   { label: "For Me", href: "/collections/for-me" },
   { label: "For Families", href: "/collections/family-caregivers" },
-  { label: "Our Story", href: "/our-story" },
+  { label: "Why Speechless", href: "/our-approach" },
 ];
 
 export function Header() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const { itemCount, openCart } = useStore();
+  const menuRef = useRef<HTMLDivElement>(null);
+  const menuTriggerRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
@@ -28,11 +30,29 @@ export function Header() {
     };
   }, [menuOpen]);
 
+  useEffect(() => {
+    if (!menuOpen) return;
+    const dialog = menuRef.current;
+    const trigger = menuTriggerRef.current;
+    const focusable = dialog?.querySelectorAll<HTMLElement>('a[href], button:not([disabled])');
+    focusable?.[0]?.focus();
+    function handleKeyDown(event: globalThis.KeyboardEvent) {
+      if (event.key === "Escape") setMenuOpen(false);
+      if (event.key !== "Tab" || !focusable?.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+    }
+    document.addEventListener("keydown", handleKeyDown);
+    return () => { document.removeEventListener("keydown", handleKeyDown); trigger?.focus(); };
+  }, [menuOpen]);
+
   return (
     <>
       <header className="site-header">
         <div className="site-header__inner shell shell--wide">
-          <button className="mobile-menu-button" onClick={() => setMenuOpen(true)} aria-label="Open menu" aria-expanded={menuOpen} aria-controls="mobile-navigation">
+          <button ref={menuTriggerRef} className="mobile-menu-button" onClick={() => setMenuOpen(true)} aria-label="Open menu" aria-expanded={menuOpen} aria-controls="mobile-navigation">
             <Menu size={22} />
           </button>
           <Link href="/" className="site-logo" aria-label={`${brand.name} home`}>
@@ -47,14 +67,14 @@ export function Header() {
           </nav>
           <div className="header-actions">
             <Link href="/shop" className="header-shop-button">Shop collection</Link>
-            <button className="icon-button bag-button" onClick={openCart} aria-label={`Open shopping bag with ${itemCount} items`}>
-              <ShoppingBag size={19} />
+            <button className="icon-button bag-button" onClick={openCart} aria-label={`Open saved designs with ${itemCount} items`}>
+              <Heart size={19} />
               {itemCount > 0 && <span>{itemCount}</span>}
             </button>
           </div>
         </div>
       </header>
-      <div id="mobile-navigation" className={`mobile-menu ${menuOpen ? "is-open" : ""}`} aria-hidden={!menuOpen} role="dialog" aria-modal="true" aria-label="Site navigation">
+      <div ref={menuRef} id="mobile-navigation" className={`mobile-menu ${menuOpen ? "is-open" : ""}`} aria-hidden={!menuOpen} role="dialog" aria-modal="true" aria-label="Site navigation">
         <div className="mobile-menu__top">
           <Wordmark />
           <button className="icon-button" onClick={() => setMenuOpen(false)} aria-label="Close menu">

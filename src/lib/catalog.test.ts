@@ -17,10 +17,16 @@ describe("fixture catalog integrity", () => {
     }
   });
 
-  it("publishes only the four focused founder-preview designs", () => {
+  it("publishes only the four focused founding-collection designs in merchandising order", () => {
     const published = products.filter((product) => product.published);
     expect(published).toHaveLength(4);
     expect(published.every((product) => product.featured)).toBe(true);
+    expect(published.map((product) => product.slug)).toEqual([
+      "more-than-words-tee",
+      "im-nonverbal-still-communicating-tee",
+      "different-communication-same-respect-tee",
+      "speech-isnt-the-only-way-tee",
+    ]);
   });
 
   it("has valid local imagery and collection references", () => {

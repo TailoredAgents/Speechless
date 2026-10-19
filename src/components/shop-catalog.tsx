@@ -1,7 +1,7 @@
 "use client";
 
 import { Search, SlidersHorizontal, X } from "lucide-react";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { ProductCard } from "@/components/product-card";
 import type { Product } from "@/types/catalog";
 
@@ -13,6 +13,27 @@ export function ShopCatalog({ products }: { products: Product[] }) {
   const [query, setQuery] = useState("");
   const [sort, setSort] = useState("featured");
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const drawerRef = useRef<HTMLElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (!drawerOpen) return;
+    document.body.style.overflow = "hidden";
+    const dialog = drawerRef.current;
+    const trigger = triggerRef.current;
+    const focusable = dialog?.querySelectorAll<HTMLElement>('button:not([disabled]), input:not([disabled]), select:not([disabled])');
+    focusable?.[0]?.focus();
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") setDrawerOpen(false);
+      if (event.key !== "Tab" || !focusable?.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+    }
+    document.addEventListener("keydown", handleKeyDown);
+    return () => { document.body.style.overflow = ""; document.removeEventListener("keydown", handleKeyDown); trigger?.focus(); };
+  }, [drawerOpen]);
 
   const filtered = useMemo(() => {
     const result = products.filter((product) => {
@@ -41,10 +62,10 @@ export function ShopCatalog({ products }: { products: Product[] }) {
       <div className="shop-toolbar">
         <div className="search-field">
           <Search size={17} />
-          <label htmlFor="catalog-search">Search concepts</label>
+          <label htmlFor="catalog-search">Search designs</label>
           <input id="catalog-search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search the collection" />
         </div>
-        <button className="filter-trigger" onClick={() => setDrawerOpen(true)} aria-expanded={drawerOpen} aria-controls="catalog-filter-drawer">
+        <button ref={triggerRef} className="filter-trigger" onClick={() => setDrawerOpen(true)} aria-expanded={drawerOpen} aria-controls="catalog-filter-drawer">
           <SlidersHorizontal size={17} /> Filters {activeCount > 0 && <span>{activeCount}</span>}
         </button>
         <label className="sort-field">Sort
@@ -59,10 +80,10 @@ export function ShopCatalog({ products }: { products: Product[] }) {
         <aside className="filter-sidebar" aria-label="Product filters">
           <div className="filter-sidebar__title"><span>Filter</span><button onClick={() => setFilters(emptyFilters)}>Clear all</button></div>
           {controls}
-          <div className="filter-note"><strong>Founder preview</strong><p>Artwork is exact to the current concept files. Garments, pricing, production placement, and inventory are still awaiting approval.</p></div>
+          <div className="filter-note"><strong>Founding collection</strong><p>Four adult T-shirts, three perspectives, and more than one way to communicate.</p></div>
         </aside>
         <div className="shop-results">
-          <div className="shop-results__count"><span>{filtered.length} {filtered.length === 1 ? "core design" : "core designs"}</span><span>Founder-preview catalog</span></div>
+          <div className="shop-results__count"><span>{filtered.length} {filtered.length === 1 ? "core design" : "core designs"}</span><span>Founding collection</span></div>
           {filtered.length > 0 ? (
             <div className="product-grid product-grid--shop">{filtered.map((product) => <ProductCard product={product} key={product.id} />)}</div>
           ) : (
@@ -71,7 +92,7 @@ export function ShopCatalog({ products }: { products: Product[] }) {
         </div>
       </div>
       <div className={`filter-drawer-backdrop ${drawerOpen ? "is-open" : ""}`} onClick={() => setDrawerOpen(false)} />
-      <aside id="catalog-filter-drawer" className={`filter-drawer ${drawerOpen ? "is-open" : ""}`} aria-hidden={!drawerOpen} role="dialog" aria-modal="true" aria-label="Filter designs">
+      <aside ref={drawerRef} id="catalog-filter-drawer" className={`filter-drawer ${drawerOpen ? "is-open" : ""}`} aria-hidden={!drawerOpen} role="dialog" aria-modal="true" aria-label="Filter designs">
         <div className="filter-drawer__top"><h2>Filter designs</h2><button className="icon-button" onClick={() => setDrawerOpen(false)} aria-label="Close filters"><X /></button></div>
         <div className="filter-drawer__body">{controls}</div>
         <div className="filter-drawer__actions"><button className="button button--outline" onClick={() => setFilters(emptyFilters)}>Clear</button><button className="button button--dark" onClick={() => setDrawerOpen(false)}>Show {filtered.length}</button></div>

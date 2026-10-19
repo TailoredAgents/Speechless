@@ -14,8 +14,8 @@ export async function POST(request: Request) {
   const parsed = waitlistSchema.safeParse(payload);
   if (!parsed.success) return NextResponse.json({ message: "Enter a valid email address." }, { status: 400 });
   const db = getDb();
-  if (!db) return NextResponse.json({ preview: true, message: "Preview mode is active, so this address was not stored. Connect PostgreSQL to enable the live launch list." });
-  await db.insert(waitlistSignups).values({ email: parsed.data.email }).onConflictDoNothing({ target: waitlistSignups.email });
-  await db.insert(analyticsEvents).values({ event: "waitlist_submission", path: "/" });
+  if (!db) return NextResponse.json({ preview: true, message: "The launch list is temporarily unavailable. Please try again later." });
+  await db.insert(waitlistSignups).values({ email: parsed.data.email, source: parsed.data.source }).onConflictDoUpdate({ target: waitlistSignups.email, set: { source: parsed.data.source } });
+  await db.insert(analyticsEvents).values({ event: "waitlist_submission", path: parsed.data.productId ? `/products/${parsed.data.productId}` : "/", productId: parsed.data.productId });
   return NextResponse.json({ ok: true });
 }

@@ -1,7 +1,7 @@
 import type { Product } from "@/types/catalog";
 
 const conceptNote =
-  "Founder-preview concept. Artwork, garment, print method, placement, colors, sizing, price, inventory, and photography require founder and production approval before public sale.";
+  "Founding collection direction. Final garment, print method, colors, sizing, pricing, and availability will be confirmed before ordering opens.";
 
 const adultSizes = ["XS", "S", "M", "L", "XL", "2XL", "3XL", "4XL"];
 const proposedMaterial = "Proposed direction: heavyweight ring-spun cotton";

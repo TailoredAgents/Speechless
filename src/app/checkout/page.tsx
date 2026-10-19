@@ -1,11 +1,8 @@
 import type { Metadata } from "next";
-import { DemoCheckout } from "@/components/demo-checkout";
+import { redirect } from "next/navigation";
 
-export const metadata: Metadata = {
-  title: "Checkout preview",
-  description: "Experience the private Speechless founder-preview checkout.",
-};
+export const metadata: Metadata = { title: "Saved designs", robots: { index: false, follow: false } };
 
 export default function CheckoutPage() {
-  return <DemoCheckout />;
+  redirect("/cart");
 }

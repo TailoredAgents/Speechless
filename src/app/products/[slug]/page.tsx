@@ -7,7 +7,7 @@ import { getCatalogProduct, getCatalogProducts } from "@/lib/catalog";
 
 
 export function generateStaticParams() {
-  return products.map((product) => ({ slug: product.slug }));
+  return products.filter((product) => product.published).map((product) => ({ slug: product.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
@@ -29,7 +29,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
     description: product.description,
     image: product.images,
     category: product.collectionLabel,
-    additionalProperty: [{ "@type": "PropertyValue", name: "Product status", value: "Founder-preview mockup — checkout disabled" }],
+    brand: { "@type": "Brand", name: "Speechless" },
   };
 
   return (

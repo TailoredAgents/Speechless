@@ -64,7 +64,7 @@ export function ComfortFinder({ products }: { products: Product[] }) {
       {step === 2 && (
         <fieldset className="finder-question">
           <legend><span>03</span>What kind of design would you wear?</legend>
-          <p>Select as many as you like. These choices help frame the four concepts without making assumptions about identity.</p>
+          <p>Select as many as you like. These choices help frame the four designs without making assumptions about identity.</p>
           <div className="finder-options finder-options--checks">
             {featureOptions.map((value) => { const checked = answers.features.includes(value); return <label key={value} className={checked ? "is-selected" : ""}><input type="checkbox" checked={checked} onChange={() => toggleList("features", value)} /><i>{checked && <Check size={16} />}</i><strong>{value}</strong></label>; })}
           </div>
@@ -74,7 +74,7 @@ export function ComfortFinder({ products }: { products: Product[] }) {
       {step === 3 && (
         <fieldset className="finder-question">
           <legend><span>04</span>What would you like to review?</legend>
-          <p>The first focused collection contains adult T-shirt concepts only.</p>
+          <p>The first focused collection contains adult T-shirts only.</p>
           <div className="finder-options finder-options--checks">
             {typeOptions.map((value) => { const checked = answers.types.includes(value); return <label key={value} className={checked ? "is-selected" : ""}><input type="checkbox" checked={checked} onChange={() => toggleList("types", value)} /><i>{checked && <Check size={16} />}</i><strong>{value}</strong></label>; })}
           </div>
@@ -92,9 +92,9 @@ export function ComfortFinder({ products }: { products: Product[] }) {
         <div className="finder-results">
           <div className="finder-results__heading">
             <Sparkles size={24} strokeWidth={1.4} />
-            <p className="eyebrow">Your concept edit</p>
+            <p className="eyebrow">Your design edit</p>
             <h2>{results.length ? "A thoughtful place to begin." : "Nothing exact—yet."}</h2>
-            <p>{results.length ? `Based on your collection and product-type choices, these ${results.length} concepts are the closest starting points.` : "The current concept collection does not include a match for those choices. We’re listening as the range develops."}</p>
+            <p>{results.length ? `Based on your collection and product-type choices, these ${results.length} designs are the closest starting points.` : "The founding collection does not include a match for those choices yet. We’re listening as the range develops."}</p>
           </div>
           {answers.features.length > 0 && <div className="finder-transparency"><strong>About your design preferences</strong><p>You selected {answers.features.join(", ").toLowerCase()}. The current recommendation is based on the perspective you chose; these design preferences are useful founder feedback until the catalog is large enough for accurate ranking.</p></div>}
           {results.length > 0 && <div className="product-grid product-grid--finder">{results.map((product) => <ProductCard product={product} key={product.id} />)}</div>}

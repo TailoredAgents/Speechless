@@ -2,9 +2,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
-import { Minus, Plus, ShoppingBag, X } from "lucide-react";
-import { formatPrice } from "@/lib/utils";
+import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
+import { Heart, X } from "lucide-react";
+import { LaunchForm } from "@/components/launch-form";
 import type { CartItem } from "@/types/catalog";
 
 type StoreContextValue = {
@@ -17,12 +17,13 @@ type StoreContextValue = {
 };
 
 const StoreContext = createContext<StoreContextValue | null>(null);
-const storageKey = "speechless-launch-bag";
+const storageKey = "speechless-saved-designs";
 
 export function StoreProvider({ children }: { children: React.ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([]);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [loaded, setLoaded] = useState(false);
+  const drawerRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     try {
@@ -46,8 +47,24 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     document.body.style.overflow = drawerOpen ? "hidden" : "";
+    if (!drawerOpen) return () => { document.body.style.overflow = ""; };
+    const previousFocus = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    const drawer = drawerRef.current;
+    const focusable = drawer?.querySelectorAll<HTMLElement>('a[href], button:not([disabled]), input:not([disabled])');
+    focusable?.[0]?.focus();
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") setDrawerOpen(false);
+      if (event.key !== "Tab" || !focusable?.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+    }
+    document.addEventListener("keydown", handleKeyDown);
     return () => {
       document.body.style.overflow = "";
+      document.removeEventListener("keydown", handleKeyDown);
+      previousFocus?.focus();
     };
   }, [drawerOpen]);
 
@@ -57,9 +74,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
         (entry) => entry.productId === item.productId && entry.color === item.color && entry.size === item.size,
       );
       if (existingIndex === -1) return [...current, { ...item, quantity: 1 }];
-      return current.map((entry, index) =>
-        index === existingIndex ? { ...entry, quantity: entry.quantity + 1 } : entry,
-      );
+      return current;
     });
     setDrawerOpen(true);
     void fetch("/api/analytics", {
@@ -95,27 +110,27 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
         onClick={() => setDrawerOpen(false)}
         aria-hidden="true"
       />
-      <aside className={`cart-drawer ${drawerOpen ? "is-open" : ""}`} aria-hidden={!drawerOpen} role="dialog" aria-modal="true" aria-label="Shopping bag">
+      <aside ref={drawerRef} className={`cart-drawer ${drawerOpen ? "is-open" : ""}`} aria-hidden={!drawerOpen} role="dialog" aria-modal="true" aria-label="Saved designs">
         <div className="cart-drawer__header">
           <div>
-          <p className="eyebrow">Your selections</p>
-            <h2>Your bag</h2>
+          <p className="eyebrow">Your first-drop edit</p>
+            <h2>Saved designs</h2>
           </div>
-          <button className="icon-button" onClick={() => setDrawerOpen(false)} aria-label="Close shopping bag">
+          <button className="icon-button" onClick={() => setDrawerOpen(false)} aria-label="Close saved designs">
             <X size={20} />
           </button>
         </div>
         <p className="cart-drawer__notice">
-          Founder-preview checkout is simulated. No payment or order will be created.
+          Keep the designs and sizes you want to hear about when the first drop opens.
         </p>
         <div className="cart-drawer__items">
           {items.length === 0 ? (
             <div className="empty-bag">
-              <ShoppingBag strokeWidth={1.2} size={42} />
-              <h3>Your first tee is waiting.</h3>
-              <p>Add a launch mockup and experience the complete founder-preview store flow.</p>
+              <Heart strokeWidth={1.2} size={42} />
+              <h3>Find the message that fits.</h3>
+              <p>Save a design and preferred size while you explore the founding collection.</p>
               <Link href="/shop" className="text-link" onClick={() => setDrawerOpen(false)}>
-                Explore the concepts
+                Explore the collection
               </Link>
             </div>
           ) : (
@@ -126,16 +141,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
                   <Link href={`/products/${item.slug}`} onClick={() => setDrawerOpen(false)}>
                     <h3>{item.name}</h3>
                   </Link>
-                  <p>{item.color} · {item.size} · {formatPrice(item.priceCents)}</p>
-                  <div className="quantity-control" aria-label={`Quantity for ${item.name}`}>
-                    <button onClick={() => value.updateQuantity(index, item.quantity - 1)} aria-label="Decrease quantity">
-                      <Minus size={14} />
-                    </button>
-                    <span>{item.quantity}</span>
-                    <button onClick={() => value.updateQuantity(index, item.quantity + 1)} aria-label="Increase quantity">
-                      <Plus size={14} />
-                    </button>
-                  </div>
+                  <p>{item.color} · Size {item.size}</p>
                   <button className="remove-link" onClick={() => value.removeItem(index)}>Remove</button>
                 </div>
               </article>
@@ -143,12 +149,10 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
           )}
         </div>
         {items.length > 0 && (
-          <div className="cart-drawer__footer">
+          <div className="cart-drawer__footer cart-drawer__footer--saved">
+            <LaunchForm compact source="saved-drawer" idPrefix="saved-drawer" />
             <Link href="/cart" className="button button--dark" onClick={() => setDrawerOpen(false)}>
-              Review bag
-            </Link>
-            <Link href="/checkout" className="button button--outline" onClick={() => setDrawerOpen(false)}>
-              Preview checkout
+              Review saved designs
             </Link>
           </div>
         )}

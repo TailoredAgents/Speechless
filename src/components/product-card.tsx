@@ -45,7 +45,7 @@ export function ProductCard({ product, priority = false }: { product: Product; p
       <Link href={`/products/${product.slug}`} className="product-card__image-wrap" aria-label={`View ${product.name}`}>
         <Image
           src={product.images[0]}
-          alt={`Concept garment mockup for ${product.name}`}
+          alt={`${product.name} garment view`}
           fill
           sizes="(max-width: 680px) 85vw, (max-width: 1080px) 46vw, 25vw"
           className={`product-card__image product-card__image--primary product-card__image--${primaryArtwork.imageClass}`}
@@ -54,7 +54,7 @@ export function ProductCard({ product, priority = false }: { product: Product; p
         {product.images[1] && <Image src={product.images[1]} alt="" fill sizes="(max-width: 680px) 85vw, (max-width: 1080px) 46vw, 32vw" className={`product-card__image product-card__image--alt product-card__image--${alternateArtwork.imageClass}`} />}
         {primaryArtwork.visible && <span className={`product-card__art product-card__art--primary product-art-slot--${product.imageViews?.[0] || "flat-front"}`}><ProductArt slug={product.slug} compact side={primaryArtwork.side} view={primaryArtwork.context} /></span>}
         {product.images[1] && alternateArtwork.visible && <span className={`product-card__art product-card__art--alt product-art-slot--${product.imageViews?.[1] || "flat-front"}`}><ProductArt slug={product.slug} compact side={alternateArtwork.side} view={alternateArtwork.context} /></span>}
-        <span className="status-pill">Artwork concept</span>
+        <span className="status-pill">Founding collection</span>
         <span className="product-card__arrow"><ArrowUpRight size={19} /></span>
       </Link>
       <div className="product-card__meta">
@@ -67,7 +67,7 @@ export function ProductCard({ product, priority = false }: { product: Product; p
       <div className="product-card__details">
         <span>XS–4XL</span>
         <span>{product.fit} fit</span>
-        <div className="swatches" aria-label={`${product.colors.length} proposed colors`}>
+        <div className="swatches" aria-label={`${product.colors.length} launch colors`}>
           {product.colors.slice(0, 3).map((color) => (
             <i key={color.name} style={{ backgroundColor: color.hex }} title={color.name} />
           ))}
@@ -75,9 +75,9 @@ export function ProductCard({ product, priority = false }: { product: Product; p
       </div>
       <div className="product-card__actions">
         <Link href={`/products/${product.slug}`} className="product-card__cta">View details <ArrowRight size={14} /></Link>
-        <button type="button" className="product-card__quick-trigger" onClick={() => setQuickOpen((open) => !open)} aria-expanded={quickOpen}>{quickOpen ? "Close" : "Quick add"}</button>
+        <button type="button" className="product-card__quick-trigger" onClick={() => setQuickOpen((open) => !open)} aria-expanded={quickOpen}>{quickOpen ? "Close" : "Save for launch"}</button>
       </div>
-      {quickOpen && <div className="product-card__quick" aria-label={`Choose a size for ${product.name}`}><span>Choose size</span><div>{product.sizes.map((size) => <button type="button" key={size} onClick={() => quickAdd(size)} aria-label={`Add size ${size} to bag`}>{addedSize === size ? <Check size={13} /> : size}</button>)}</div></div>}
+      {quickOpen && <div className="product-card__quick" aria-label={`Choose a size for ${product.name}`}><span>Choose a size to save</span><div>{product.sizes.map((size) => <button type="button" key={size} onClick={() => quickAdd(size)} aria-label={`Save size ${size} for launch`}>{addedSize === size ? <Check size={13} /> : size}</button>)}</div></div>}
     </article>
   );
 }

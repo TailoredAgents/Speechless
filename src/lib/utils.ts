@@ -6,7 +6,7 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function formatPrice(priceCents: number | null) {
-  if (priceCents === null) return "Pricing pending";
+  if (priceCents === null) return "Coming soon";
   return new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",

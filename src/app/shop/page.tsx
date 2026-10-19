@@ -14,12 +14,12 @@ export default async function ShopPage() {
   return (
     <>
       <section className="sl-shop-hero">
-        <Image src="/images/speechless-product-hero-more-than-words-v3.png" alt="The conceptual More Than Words T-shirt displayed on a colorful studio set" fill sizes="100vw" priority />
+        <Image src="/images/speechless-product-hero-more-than-words-v3.png" alt="The More Than Words T-shirt displayed on a colorful studio set" fill sizes="100vw" priority />
         <div className="sl-shop-hero__veil" />
         <div className="shell shell--wide sl-shop-hero__content">
           <p className="sl-kicker">The founding collection</p>
           <h1>Wear what<br />matters.</h1>
-          <p>Four deliberately different adult T-shirt concepts: direct, supportive, bold, and subtle. Every graphic is shown from one canonical artwork source.</p>
+          <p>Four deliberately different adult T-shirts: direct, supportive, bold, and subtle. Choose the message that feels right for you.</p>
         </div>
       </section>
       <ShopCatalog products={products} />

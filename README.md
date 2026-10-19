@@ -1,15 +1,15 @@
 # Speechless
 
-A founder-ready ecommerce prototype for an adult-first, word-forward autism awareness apparel brand inspired by Tommy.
+A founder-ready prelaunch storefront for an adult-first, word-forward autism awareness apparel brand.
 
-The storefront presents four focused graphic T-shirt concepts for nonverbal autistic people, caregivers, families, and community allies. Seven earlier directions remain preserved as unpublished drafts. It includes complete collection, product, shopping-bag, and checkout-preview journeys while remaining safely disconnected from payments and fulfillment.
+The storefront presents four focused graphic T-shirt designs for nonverbal autistic people, caregivers, families, and community allies. Seven earlier directions remain preserved as unpublished drafts. It includes complete collection, product, saved-design, and first-drop signup journeys while remaining safely disconnected from payments and fulfillment.
 
 ## Preview status
 
-- **This is a private founder preview.** Products, garments, graphics, pricing, inventory, photography, and policies await Amber’s approval.
+- **This is a prelaunch storefront.** Visitors can explore the founding collection, save preferred designs and sizes, and join the first-drop list while commerce remains disabled.
 - **Speechless is a working name.** Complete business-name and trademark review before public launch.
 - **The site defaults to `noindex`.** Do not enable indexing before brand, product, and policy approval.
-- **Checkout is a simulation.** It does not transmit or store delivery details, request card information, reserve inventory, or create an order.
+- **Checkout remains disabled.** Visitors can save designs locally, but the site does not request payment, reserve inventory, or create an order.
 - **Campaign and garment images are original concept assets.** Replace them with approved samples and photography before commercial use.
 
 ## Local setup
@@ -59,14 +59,14 @@ node scripts/render-product-mockups.mjs
 ## Key locations
 
 - `src/config/brand.ts` — centralized brand defaults and indexing flag
-- `src/data/products.ts` — four-product founder-preview catalog plus preserved unpublished drafts
+- `src/data/products.ts` — four-product founding collection plus preserved unpublished drafts
 - `src/data/product-designs.ts` — canonical wording, artwork files, audiences, and print-placement specifications
 - `PRODUCT_ARTWORK_INVENTORY.md` — featured-SKU artwork and approval inventory
 - `PHOTOGRAPHY_INVENTORY.md` — image provenance, placement, and approval inventory
 - `ROUND3_QC_REPORT.md` — current creative QA findings and incomplete work
 - `src/components/product-art.tsx` — canonical SVG presentation for artwork-only and legacy-draft surfaces
 - `scripts/render-product-mockups.mjs` — reproducible fabric-aware garment composites
-- `src/components/demo-checkout.tsx` — deliberately non-functional checkout presentation
+- `src/components/cart-page.tsx` — saved-design review and first-drop signup experience
 - `src/app/refresh.css` — current Speechless visual system
 - `src/lib/db/schema.ts` — PostgreSQL schema
 - `public/images/` — original campaign and garment concept assets

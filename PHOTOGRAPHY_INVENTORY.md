@@ -29,4 +29,4 @@ The blank files remain source material for `scripts/render-product-mockups.mjs` 
 
 ## Authentic founder imagery still needed
 
-The Tommy story sections intentionally reserve a designed space for an approved family photograph. No stock or generated person is represented as Tommy or his family. The final image, caption, crop, and usage permission remain owner decisions.
+Personal family photography is intentionally excluded from the public storefront until the family approves the story, image, caption, crop, and usage.

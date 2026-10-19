@@ -4,8 +4,8 @@ export const brand = {
   tagline: "Different ways to communicate. Same respect.",
   shortTagline: "More than words.",
   description:
-    "Adult graphic apparel concepts created to encourage patience, understanding, and respect around nonverbal autism.",
-  email: "hello@speechless.example",
+    "Adult graphic apparel created to encourage patience, understanding, and respect around nonverbal autism.",
+  email: "",
   commerceEnabled: false,
   indexingEnabled: false,
   currency: "USD",
