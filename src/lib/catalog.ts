@@ -1,13 +1,15 @@
 import "server-only";
-import { connection } from "next/server";
+import { unstable_cache } from "next/cache";
 import { getAdminCollections, getAdminProducts, getPageSection } from "@/lib/admin-data";
 import { products as fixtureProducts } from "@/data/products";
 
 const merchandisingOrder = new Map(fixtureProducts.map((product, index) => [product.id, index]));
+const getCachedProducts = unstable_cache(getAdminProducts, ["catalog-products"], { revalidate: 60, tags: ["catalog"] });
+const getCachedCollections = unstable_cache(getAdminCollections, ["catalog-collections"], { revalidate: 60, tags: ["catalog"] });
+const getCachedHomeEditorial = unstable_cache(() => getPageSection("home", "editorial"), ["home-editorial"], { revalidate: 60, tags: ["content"] });
 
 export async function getCatalogProducts() {
-  await connection();
-  return (await getAdminProducts())
+  return (await getCachedProducts())
     .filter((product) => product.published)
     .toSorted((a, b) => (merchandisingOrder.get(a.id) ?? Number.MAX_SAFE_INTEGER) - (merchandisingOrder.get(b.id) ?? Number.MAX_SAFE_INTEGER));
 }
@@ -17,12 +19,10 @@ export async function getCatalogProduct(slug: string) {
 }
 
 export async function getCatalogCollection(slug: string) {
-  await connection();
-  return (await getAdminCollections()).find((collection) => collection.slug === slug && collection.published);
+  return (await getCachedCollections()).find((collection) => collection.slug === slug && collection.published);
 }
 
 export async function getHomeEditorial() {
-  await connection();
-  const section = await getPageSection("home", "editorial");
+  const section = await getCachedHomeEditorial();
   return (section?.content || {}) as Record<string, string>;
 }

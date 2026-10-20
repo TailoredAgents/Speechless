@@ -54,6 +54,7 @@ npm test
 npm run build
 npm run check:links -- http://localhost:3000
 node scripts/render-product-mockups.mjs
+npm run images:optimize
 ```
 
 ## Key locations
@@ -66,11 +67,12 @@ node scripts/render-product-mockups.mjs
 - `ROUND3_QC_REPORT.md` — current creative QA findings and incomplete work
 - `src/components/product-art.tsx` — canonical SVG presentation for artwork-only and legacy-draft surfaces
 - `scripts/render-product-mockups.mjs` — reproducible fabric-aware garment composites
+- `scripts/optimize-images.mjs` — repeatable storefront WebP generation for fast delivery
 - `src/components/cart-page.tsx` — saved-design review and first-drop signup experience
 - `src/app/refresh.css` — current Speechless visual system
 - `src/lib/db/schema.ts` — PostgreSQL schema
 - `public/images/` — original campaign and garment concept assets
-- `public/images/speechless-hero-more-than-words-v3.png` — current exact-art social-sharing campaign image
+- `public/images/speechless-hero-more-than-words-v3.webp` — optimized exact-art social-sharing campaign image
 - `OWNER_CHECKLIST.md` — decisions required to turn the preview into a real store
 - `DEPLOYMENT.md` — Render deployment guidance
 

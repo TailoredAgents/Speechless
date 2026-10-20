@@ -21,9 +21,9 @@ export const metadata: Metadata = {
     title: `${brand.name} — More than words`,
     description: brand.description,
     type: "website",
-    images: [{ url: "/images/speechless-hero-more-than-words-v3.png", width: 1727, height: 911, alt: `${brand.name} founding collection campaign` }],
+    images: [{ url: "/images/speechless-hero-more-than-words-v3.webp", width: 1727, height: 911, alt: `${brand.name} founding collection campaign` }],
   },
-  twitter: { card: "summary_large_image", title: `${brand.name} — More than words`, description: brand.description, images: ["/images/speechless-hero-more-than-words-v3.png"] },
+  twitter: { card: "summary_large_image", title: `${brand.name} — More than words`, description: brand.description, images: ["/images/speechless-hero-more-than-words-v3.webp"] },
 };
 
 export const viewport: Viewport = {

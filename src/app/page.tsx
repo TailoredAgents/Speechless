@@ -6,9 +6,9 @@ import { ProductCard } from "@/components/product-card";
 import { getCatalogProducts } from "@/lib/catalog";
 
 const paths = [
-  { number: "01", title: "For me", copy: "Messages chosen by people who communicate beyond spoken words.", href: "/collections/for-me", image: "/images/speechless-nonverbal-flat-v2.png" },
-  { number: "02", title: "For someone I love", copy: "Supportive designs that do not speak over the person at the heart of them.", href: "/collections/family-caregivers", image: "/images/speechless-supporter-back-v3.png" },
-  { number: "03", title: "For the community", copy: "Fashion-first reminders that communication takes many forms.", href: "/collections/community-allies", image: "/images/speechless-fashion-portrait-v3.png" },
+  { number: "01", title: "For me", copy: "Messages chosen by people who communicate beyond spoken words.", href: "/collections/for-me", image: "/images/speechless-nonverbal-flat-v2.webp" },
+  { number: "02", title: "For someone I love", copy: "Supportive designs that do not speak over the person at the heart of them.", href: "/collections/family-caregivers", image: "/images/speechless-supporter-back-v3.webp" },
+  { number: "03", title: "For the community", copy: "Fashion-first reminders that communication takes many forms.", href: "/collections/community-allies", image: "/images/speechless-fashion-portrait-v3.webp" },
 ];
 
 const productPromises = [
@@ -25,7 +25,7 @@ export default async function Home() {
   return (
     <>
       <section className="sl-hero sl-hero--lifestyle sl-hero--canonical">
-        <Image src="/images/speechless-hero-more-than-words-v3.png" alt="Young adult wearing the More Than Words T-shirt" fill sizes="100vw" priority />
+        <Image src="/images/speechless-hero-more-than-words-v3.webp" alt="Young adult wearing the More Than Words T-shirt" fill sizes="100vw" priority />
         <div className="sl-hero__wash" />
         <div className="shell shell--wide sl-hero__inner">
           <div className="sl-hero__copy">
@@ -54,7 +54,7 @@ export default async function Home() {
           <div><p>One oversized front graphic. One direct self-identification design. One front-and-back supporter tee. One quieter fashion statement.</p><Link href="/shop">See the complete edit <ArrowRight size={16} /></Link></div>
         </div>
         <div className="product-grid product-grid--featured">
-          {featured.map((product, index) => <ProductCard product={product} key={product.id} priority={index < 3} />)}
+          {featured.map((product) => <ProductCard product={product} key={product.id} />)}
         </div>
       </section>
 
@@ -66,7 +66,7 @@ export default async function Home() {
 
       <section className="sl-editorial shell shell--wide">
         <div className="sl-editorial__image">
-          <Image src="/images/speechless-fashion-portrait-v3.png" alt="Young adult wearing the Speech Isn't the Only Way T-shirt" fill sizes="(max-width: 820px) 100vw, 46vw" />
+          <Image src="/images/speechless-fashion-portrait-v3.webp" alt="Young adult wearing the Speech Isn't the Only Way T-shirt" fill sizes="(max-width: 820px) 100vw, 46vw" />
         </div>
         <div className="sl-editorial__copy">
           <p className="sl-kicker">Worn with intention</p>
@@ -97,7 +97,7 @@ export default async function Home() {
           <p>Speech is one way to communicate. It has never been the only way.</p>
           <Link href="/shop" className="sl-button sl-button--cream">Explore the artwork <ArrowRight size={17} /></Link>
         </div>
-        <div className="sl-signature__image"><Image src="/images/speechless-print-detail-v3.png" alt="Detail view of the More Than Words print on heavyweight warm-cream cotton" fill sizes="(max-width: 820px) 100vw, 50vw" /></div>
+        <div className="sl-signature__image"><Image src="/images/speechless-print-detail-v3.webp" alt="Detail view of the More Than Words print on heavyweight warm-cream cotton" fill sizes="(max-width: 820px) 100vw, 50vw" /></div>
       </section>
 
       <section className="sl-launch-invite">
