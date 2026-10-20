@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { DM_Sans, Instrument_Serif } from "next/font/google";
 import { SiteChrome } from "@/components/site-chrome";
-import { StoreProvider } from "@/components/store-provider";
 import { brand } from "@/config/brand";
 import "./globals.css";
 import "./refresh.css";
@@ -21,7 +20,7 @@ export const metadata: Metadata = {
     title: `${brand.name} — More than words`,
     description: brand.description,
     type: "website",
-    images: [{ url: "/images/speechless-hero-more-than-words-v3.webp", width: 1727, height: 911, alt: `${brand.name} founding collection campaign` }],
+    images: [{ url: "/images/speechless-hero-more-than-words-v3.webp", width: 1727, height: 911, alt: `${brand.name} graphic T-shirt collection` }],
   },
   twitter: { card: "summary_large_image", title: `${brand.name} — More than words`, description: brand.description, images: ["/images/speechless-hero-more-than-words-v3.webp"] },
 };
@@ -35,9 +34,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" className={`${sans.variable} ${serif.variable}`}>
       <body>
-        <StoreProvider>
-          <SiteChrome>{children}</SiteChrome>
-        </StoreProvider>
+        <SiteChrome>{children}</SiteChrome>
       </body>
     </html>
   );

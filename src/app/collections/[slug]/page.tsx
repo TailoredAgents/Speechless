@@ -37,13 +37,13 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
         <div className="sl-collection-hero__art product-art-slot--flat-front">{featured && <ProductArt slug={featured.slug} />}</div>
       </section>
       <section id="collection-products" className="sl-section shell shell--wide collection-products">
-        <div className="sl-heading"><div><p className="sl-kicker">The edit</p><h2>Choose deliberately.</h2></div><p>Explore the founding designs and save the message you want to hear about first.</p></div>
+        <div className="sl-heading"><div><p className="sl-kicker">See the shirts</p><h2>Find your favorite.</h2></div><p>Take a closer look at the graphics, colors, fit direction, and every available view.</p></div>
         <div className="product-grid product-grid--shop">{collectionProducts.map((product) => <ProductCard product={product} key={product.id} />)}</div>
       </section>
       <section className="sl-collection-next">
-        <p className="sl-kicker">All together now</p>
-        <h2>More than one way to connect.</h2>
-        <Link href="/shop" className="sl-button sl-button--cream">See the full collection <ArrowRight size={17} /></Link>
+        <p className="sl-kicker">Keep looking</p>
+        <h2>Four shirts. Plenty to say.</h2>
+        <Link href="/shop" className="sl-button sl-button--cream">Shop all tees <ArrowRight size={17} /></Link>
       </section>
     </>
   );

@@ -24,10 +24,10 @@ export function LaunchForm({ compact = false, source = "website", productId, pro
       const result = (await response.json()) as { ok?: boolean; preview?: boolean; message?: string };
       if (result.preview) {
         setState("preview");
-        setMessage(result.message || "The launch list is temporarily unavailable. Please try again later.");
+        setMessage(result.message || "The email list is temporarily unavailable. Please try again later.");
       } else if (response.ok && result.ok) {
         setState("success");
-        setMessage(productName ? `You’re on the list for ${productName}.` : "You’re on the first-drop list. We’ll only write when there is something meaningful to share.");
+        setMessage(productName ? `You’re on the list for ${productName}.` : "You’re on the list. We’ll email when there is a new tee or release update to share.");
         form.reset();
       } else {
         setState("error");
@@ -35,7 +35,7 @@ export function LaunchForm({ compact = false, source = "website", productId, pro
       }
     } catch {
       setState("error");
-      setMessage("We couldn’t reach the launch list right now. Please try again later.");
+      setMessage("We couldn’t reach the email list right now. Please try again later.");
     }
   }
 
@@ -45,7 +45,7 @@ export function LaunchForm({ compact = false, source = "website", productId, pro
         <label htmlFor={`${idPrefix}-email`}>Email address</label>
         <input id={`${idPrefix}-email`} name="email" type="email" required autoComplete="email" placeholder="you@example.com" />
         <input className="honey" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" />
-        <button type="submit" aria-label="Join the launch list" disabled={state === "loading"}>
+        <button type="submit" aria-label="Join the email list" disabled={state === "loading"}>
           {state === "loading" ? <LoaderCircle className="spin" size={19} /> : state === "success" ? <Check size={19} /> : <ArrowRight size={19} />}
         </button>
       </form>

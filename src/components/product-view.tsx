@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Check, ChevronDown, Heart, Info, Ruler, ShieldCheck, Sparkles } from "lucide-react";
+import { Check, ChevronDown, Info, Ruler, ShieldCheck, Sparkles } from "lucide-react";
 import { useEffect, useState } from "react";
+import { LaunchForm } from "@/components/launch-form";
 import { ProductArt } from "@/components/product-art";
-import { useStore } from "@/components/store-provider";
 import type { Product } from "@/types/catalog";
 import { formatPrice } from "@/lib/utils";
 import { getProductDesign } from "@/data/product-designs";
@@ -13,11 +13,7 @@ import { getProductDesign } from "@/data/product-designs";
 export function ProductView({ product }: { product: Product }) {
   const [imageIndex, setImageIndex] = useState(0);
   const [color, setColor] = useState(product.colors[0]?.name || "Launch color");
-  const [size, setSize] = useState("");
-  const [sizeError, setSizeError] = useState(false);
-  const [added, setAdded] = useState(false);
   const [sizeGuideOpen, setSizeGuideOpen] = useState(false);
-  const { addItem } = useStore();
   const design = getProductDesign(product.slug);
   const selectedView = product.imageViews?.[imageIndex] || "flat-front";
   const selectedViewNormalized = selectedView.replace("composite-", "");
@@ -33,23 +29,12 @@ export function ProductView({ product }: { product: Product }) {
     });
   }, [product.id, product.slug]);
 
-  function addToBag() {
-    if (!size) {
-      setSizeError(true);
-      return;
-    }
-    setSizeError(false);
-    addItem({ productId: product.id, slug: product.slug, name: product.name, image: product.images[0], color, size, priceCents: product.priceCents });
-    setAdded(true);
-  }
-
   return (
     <section className={`product-page product-page--${product.slug} shell shell--wide`}>
       <div className="product-gallery">
         <div className="product-gallery__main">
           <Image src={product.images[imageIndex]} alt={`${product.name} view ${imageIndex + 1}`} fill sizes="(max-width: 900px) 100vw, 55vw" className={`product-gallery__image--${selectedViewNormalized}`} priority />
           {selectedArtworkVisible && <span className={`product-gallery__art product-art-slot--${selectedViewNormalized}`}><ProductArt slug={product.slug} side={selectedSide} view={selectedContext} /></span>}
-          <span className="status-pill">Founding collection</span>
           <span className="product-gallery__count">0{imageIndex + 1} / 0{product.images.length}</span>
         </div>
         <div className="product-gallery__thumbs" aria-label="Choose product image">
@@ -70,7 +55,7 @@ export function ProductView({ product }: { product: Product }) {
         <div className="product-info__crumbs"><Link href="/shop">Shop</Link><span>/</span><Link href={`/collections/${product.collection}`}>{product.collectionLabel}</Link></div>
         <p className="eyebrow">{product.collectionLabel}</p>
         <h1>{product.name}</h1>
-        <div className="product-info__status"><span>{formatPrice(product.priceCents)}</span><i>First drop</i></div>
+        <div className="product-info__status"><span>{formatPrice(product.priceCents)}</span><i>Adult unisex tee</i></div>
         <p className="product-info__description">{product.description}</p>
         {design && <div className="product-message"><p className="sl-kicker">The design</p><dl><div><dt>Front</dt><dd>{design.frontText}</dd></div>{design.backText && <div><dt>Back</dt><dd>{design.backText}</dd></div>}<div><dt>Designed for</dt><dd>{design.intendedAudience}</dd></div><div><dt>Placement</dt><dd>{design.printPlacement}</dd></div></dl></div>}
 
@@ -85,25 +70,28 @@ export function ProductView({ product }: { product: Product }) {
           </div>
         </fieldset>
         <fieldset className="product-option product-option--sizes">
-          <legend>Size <button type="button" onClick={() => setSizeGuideOpen((open) => !open)}><Ruler size={14} /> Size guide</button></legend>
+          <legend>Planned size range <button type="button" onClick={() => setSizeGuideOpen((open) => !open)}><Ruler size={14} /> Size notes</button></legend>
           {sizeGuideOpen && <div className="size-guide-preview"><strong>Planned adult unisex sizing</strong><p>XS–4XL. Final garment measurements will be published before ordering opens.</p></div>}
-          <div className="size-options">
-            {product.sizes.map((option) => <button type="button" key={option} className={size === option ? "is-active" : ""} onClick={() => { setSize(option); setSizeError(false); }}>{option}</button>)}
+          <div className="size-options size-options--preview">
+            {product.sizes.map((option) => <span key={option}>{option}</span>)}
           </div>
-          {sizeError && <p className="option-error">Choose a size before adding this tee.</p>}
         </fieldset>
-        <button className="button button--dark product-save" onClick={addToBag}>{added ? <><Check size={18} /> Saved for launch</> : <><Heart size={18} /> Save for launch</>}</button>
-        <p className="purchase-note">Choose your preferred size now and join the first-drop list from your saved designs.</p>
-        <div className="product-assurances" aria-label="Product details"><span><Ruler /> XS–4XL planned</span><span><Sparkles /> Heavyweight cotton direction</span><span><ShieldCheck /> Choice-led message</span></div>
+        <div className="product-first-look">
+          <p className="sl-kicker">Want this one?</p>
+          <h2>Get the first look.</h2>
+          <p>We’ll email you when the final garment, colors, price, and release date are ready.</p>
+          <LaunchForm compact source="product-page" productId={product.id} productName={product.name} idPrefix={`product-${product.slug}`} />
+        </div>
+        <div className="product-assurances" aria-label="Product details"><span><Ruler /> XS–4XL planned</span><span><Sparkles /> Heavyweight cotton direction</span><span><ShieldCheck /> Original Speechless graphic</span></div>
 
-        <div className="concept-callout"><Info size={17} /><p><strong>Designed with intention</strong>Final garment measurements, material details, and care guidance will be published before ordering opens.</p></div>
+        <div className="concept-callout"><Info size={17} /><p><strong>Details are still in development</strong>Final garment measurements, material details, and care guidance will be published before ordering opens.</p></div>
         <div className="product-accordions">
           <details open><summary>The message <ChevronDown size={16} /></summary><p>{product.story}</p></details>
           <details><summary>Garment direction <ChevronDown size={16} /></summary><p>{product.material}. A {product.fit.toLowerCase()} adult unisex fit is planned in XS–4XL. Final measurements will be published before ordering opens.</p></details>
           <details><summary>Care direction <ChevronDown size={16} /></summary><p>{product.care}. Final care instructions will follow the selected garment and print method.</p></details>
-          <details><summary>Shipping & returns <ChevronDown size={16} /></summary><p>Shipping rates, fulfillment timing, and return details will be published before the first drop opens.</p></details>
+          <details><summary>Shipping & returns <ChevronDown size={16} /></summary><p>Shipping rates, fulfillment timing, and return details will be published before ordering opens.</p></details>
         </div>
-        <Link href="/shop" className="product-finder-link"><span><strong>Find the message that feels right</strong>Explore the four core designs</span></Link>
+        <Link href="/comfort-finder" className="product-finder-link"><span><strong>Not sure which tee is yours?</strong>Take the quick shirt finder</span></Link>
       </div>
     </section>
   );

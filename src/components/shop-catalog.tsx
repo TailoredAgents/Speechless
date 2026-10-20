@@ -80,10 +80,10 @@ export function ShopCatalog({ products }: { products: Product[] }) {
         <aside className="filter-sidebar" aria-label="Product filters">
           <div className="filter-sidebar__title"><span>Filter</span><button onClick={() => setFilters(emptyFilters)}>Clear all</button></div>
           {controls}
-          <div className="filter-note"><strong>Founding collection</strong><p>Four adult T-shirts, three perspectives, and more than one way to communicate.</p></div>
+          <div className="filter-note"><strong>Four ways to wear it</strong><p>Try a bold front graphic, a quieter statement, or a tee with something to say on the back.</p></div>
         </aside>
         <div className="shop-results">
-          <div className="shop-results__count"><span>{filtered.length} {filtered.length === 1 ? "core design" : "core designs"}</span><span>Founding collection</span></div>
+          <div className="shop-results__count"><span>{filtered.length} {filtered.length === 1 ? "shirt" : "shirts"}</span><span>First look</span></div>
           {filtered.length > 0 ? (
             <div className="product-grid product-grid--shop">{filtered.map((product) => <ProductCard product={product} key={product.id} />)}</div>
           ) : (

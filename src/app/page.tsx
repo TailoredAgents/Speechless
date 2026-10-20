@@ -6,17 +6,10 @@ import { ProductCard } from "@/components/product-card";
 import { getCatalogProducts } from "@/lib/catalog";
 
 const paths = [
-  { number: "01", title: "For me", copy: "Messages chosen by people who communicate beyond spoken words.", href: "/collections/for-me", image: "/images/speechless-nonverbal-flat-v2.webp" },
-  { number: "02", title: "For someone I love", copy: "Supportive designs that do not speak over the person at the heart of them.", href: "/collections/family-caregivers", image: "/images/speechless-supporter-back-v3.webp" },
-  { number: "03", title: "For the community", copy: "Fashion-first reminders that communication takes many forms.", href: "/collections/community-allies", image: "/images/speechless-fashion-portrait-v3.webp" },
+  { label: "Bold", title: "Say it loud.", copy: "A direct front graphic that puts the message right where people can see it.", href: "/products/im-nonverbal-still-communicating-tee", image: "/images/speechless-nonverbal-flat-v2.webp" },
+  { label: "Front + back", title: "Flip it around.", copy: "A small chest hit up front with the full statement saved for the back.", href: "/products/different-communication-same-respect-tee", image: "/images/speechless-supporter-back-v3.webp" },
+  { label: "Low-key", title: "Keep it subtle.", copy: "A quieter graphic for anyone who wants the meaning without the megaphone.", href: "/products/speech-isnt-the-only-way-tee", image: "/images/speechless-fashion-portrait-v3.webp" },
 ];
-
-const productPromises = [
-  ["Four intentional designs", "Each piece has its own audience, wording, scale, and graphic role."],
-  ["Adult unisex fits", "Relaxed, classic, and oversized silhouettes shape the founding collection."],
-  ["XS–4XL planned", "The final size chart will be published before ordering opens."],
-  ["Made with care", "Garment feel, print quality, and lived-experience feedback guide every decision."],
-] as const;
 
 export default async function Home() {
   const products = await getCatalogProducts();
@@ -29,38 +22,33 @@ export default async function Home() {
         <div className="sl-hero__wash" />
         <div className="shell shell--wide sl-hero__inner">
           <div className="sl-hero__copy">
-            <p className="sl-kicker">Graphic apparel for every way we communicate</p>
+            <p className="sl-kicker">Graphic tees with something to say</p>
             <h1>More than<br /><em>words.</em></h1>
-            <p>Four focused T-shirts built around communication, respect, and the choice to make a message visible.</p>
+            <p>Bold, easygoing T-shirts made for people who communicate in all kinds of ways. Find the one that feels like you.</p>
             <div className="sl-actions">
-              <Link href="/shop" className="sl-button sl-button--ink">Explore the four designs <ArrowRight size={18} /></Link>
-              <Link href="/our-approach" className="sl-button sl-button--text">Why Speechless</Link>
+              <Link href="/shop" className="sl-button sl-button--ink">Meet the shirts <ArrowRight size={18} /></Link>
+              <Link href="/comfort-finder" className="sl-button sl-button--text">Find your tee</Link>
             </div>
-            <div className="sl-hero__proof"><span>Adult-first</span><span>Four distinct designs</span><span>Community-centered</span></div>
+            <div className="sl-hero__proof"><span>Adult unisex fits</span><span>Original graphics</span><span>Four different moods</span></div>
           </div>
-          <div className="sl-hero__stamp" aria-hidden="true"><span>SPEECHLESS</span><strong>04</strong><small>FOUNDING<br />DESIGNS</small></div>
+          <div className="sl-hero__stamp" aria-hidden="true"><span>SPEECHLESS</span><strong>04</strong><small>SHIRTS<br />TO START</small></div>
         </div>
       </section>
 
       <section className="sl-belief-bar" aria-label="Brand highlights">
-        <span>The clothes are the product</span><i />
-        <span>The message is the purpose</span><i />
-        <span>Understanding starts with attention</span>
+        <span>Big graphics</span><i />
+        <span>Easy shapes</span><i />
+        <span>Front + back prints</span><i />
+        <span>Wear it your way</span>
       </section>
 
       <section className="sl-section sl-products shell shell--wide" id="launch-edit">
         <div className="sl-heading">
-          <div><p className="sl-kicker">The core collection</p><h2>Four ideas.<br />Built differently.</h2></div>
-          <div><p>One oversized front graphic. One direct self-identification design. One front-and-back supporter tee. One quieter fashion statement.</p><Link href="/shop">See the complete edit <ArrowRight size={16} /></Link></div>
+          <div><p className="sl-kicker">Pick your favorite</p><h2>Meet the<br />shirts.</h2></div>
+          <div><p>Four graphics with four different energies—from big and direct to simple and low-key.</p><Link href="/shop">See every design <ArrowRight size={16} /></Link></div>
         </div>
         <div className="product-grid product-grid--featured">
           {featured.map((product) => <ProductCard product={product} key={product.id} />)}
-        </div>
-      </section>
-
-      <section className="sl-product-promises" aria-label="Collection development principles">
-        <div className="shell shell--wide sl-product-promises__grid">
-          {productPromises.map(([title, copy], index) => <article key={title}><span>0{index + 1}</span><h2>{title}</h2><p>{copy}</p></article>)}
         </div>
       </section>
 
@@ -69,22 +57,22 @@ export default async function Home() {
           <Image src="/images/speechless-fashion-portrait-v3.webp" alt="Young adult wearing the Speech Isn't the Only Way T-shirt" fill sizes="(max-width: 820px) 100vw, 46vw" />
         </div>
         <div className="sl-editorial__copy">
-          <p className="sl-kicker">Worn with intention</p>
-          <h2>A little understanding<br />changes everything.</h2>
-          <p>A clear message can offer useful context or ask for patience before an interaction begins. A quieter message can simply remind the people around us that speech is not the only way to connect.</p>
-          <p>The first collection makes room for both—without assuming every wearer wants to disclose the same thing.</p>
-          <Link href="/our-approach" className="sl-button sl-button--ink">How the messages are chosen <ArrowRight size={17} /></Link>
+          <p className="sl-kicker">One tee, your way</p>
+          <h2>Looks good.<br />Says something.</h2>
+          <p>Some days call for a big graphic. Other days call for something quieter. Speechless makes room for both, with designs that work as clothes first and carry meaning with them.</p>
+          <p>Dress it up, wear it loose, layer it, or make it the whole outfit.</p>
+          <Link href="/shop" className="sl-button sl-button--ink">Find your favorite <ArrowRight size={17} /></Link>
           <small>Models shown do not represent or imply anyone’s diagnosis.</small>
         </div>
       </section>
 
       <section className="sl-section sl-paths shell shell--wide">
-        <div className="sl-heading"><div><p className="sl-kicker">Shop by perspective</p><h2>Choose the message<br />that fits.</h2></div><p>Start with the perspective closest to you. Every message is designed to be chosen with care.</p></div>
+        <div className="sl-heading"><div><p className="sl-kicker">Shop by style</p><h2>What&apos;s your<br />T-shirt mood?</h2></div><p>Go bold, try a front-and-back graphic, or keep the message a little more understated.</p></div>
         <div className="sl-path-grid sl-path-grid--product">
           {paths.map((path) => (
             <Link href={path.href} className="sl-path-product" key={path.title}>
-              <div className="sl-path-product__visual"><Image src={path.image} alt="" fill sizes="(max-width: 760px) 100vw, 31vw" /><span>{path.number}</span></div>
-              <div className="sl-path-product__copy"><h3>{path.title}</h3><p>{path.copy}</p><strong>View relevant design <ArrowRight size={16} /></strong></div>
+              <div className="sl-path-product__visual"><Image src={path.image} alt="" fill sizes="(max-width: 760px) 100vw, 31vw" /><span>{path.label}</span></div>
+              <div className="sl-path-product__copy"><h3>{path.title}</h3><p>{path.copy}</p><strong>See the shirt <ArrowRight size={16} /></strong></div>
             </Link>
           ))}
         </div>
@@ -102,11 +90,11 @@ export default async function Home() {
 
       <section className="sl-launch-invite">
         <div className="shell sl-launch-invite__inner">
-          <p className="sl-kicker">The first drop starts here</p>
-          <h2>Be first to see<br />the founding collection.</h2>
-          <p>Get thoughtful updates as the garments, launch date, and first release come together.</p>
+          <p className="sl-kicker">New tees are coming</p>
+          <h2>Get the<br />first look.</h2>
+          <p>See final colors, garment details, and the release date before everyone else.</p>
           <LaunchForm source="homepage" idPrefix="homepage" />
-          <small>Occasional launch updates. No noise, no pressure.</small>
+          <small>Occasional product updates. No noise, no pressure.</small>
         </div>
       </section>
     </>

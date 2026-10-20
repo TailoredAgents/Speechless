@@ -94,7 +94,7 @@ export function ComfortFinder({ products }: { products: Product[] }) {
             <Sparkles size={24} strokeWidth={1.4} />
             <p className="eyebrow">Your design edit</p>
             <h2>{results.length ? "A thoughtful place to begin." : "Nothing exact—yet."}</h2>
-            <p>{results.length ? `Based on your collection and product-type choices, these ${results.length} designs are the closest starting points.` : "The founding collection does not include a match for those choices yet. We’re listening as the range develops."}</p>
+            <p>{results.length ? `Based on your style choices, these ${results.length} designs are the closest starting points.` : "The current shirt lineup does not include a match for those choices yet. We’re listening as the range develops."}</p>
           </div>
           {answers.features.length > 0 && <div className="finder-transparency"><strong>About your design preferences</strong><p>You selected {answers.features.join(", ").toLowerCase()}. The current recommendation is based on the perspective you chose; these design preferences are useful founder feedback until the catalog is large enough for accurate ranking.</p></div>}
           {results.length > 0 && <div className="product-grid product-grid--finder">{results.map((product) => <ProductCard product={product} key={product.id} />)}</div>}

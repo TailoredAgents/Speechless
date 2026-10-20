@@ -38,7 +38,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
       <ProductView product={product} />
       <section className="section related-products">
         <div className="shell shell--wide">
-            <div className="section-heading section-heading--row"><div><p className="eyebrow">Keep exploring</p><h2>Another way to say it.</h2></div></div>
+            <div className="section-heading section-heading--row"><div><p className="eyebrow">Keep looking</p><h2>You might like these too.</h2></div></div>
           <div className="product-grid">{related.map((entry) => <ProductCard product={entry} key={entry.id} />)}</div>
         </div>
       </section>

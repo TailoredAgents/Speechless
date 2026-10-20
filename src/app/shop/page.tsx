@@ -5,8 +5,8 @@ import { getCatalogProducts } from "@/lib/catalog";
 import { brand } from "@/config/brand";
 
 export const metadata: Metadata = {
-  title: "Shop the founding collection",
-  description: `Explore the founding graphic T-shirt collection from ${brand.name}.`,
+  title: "Shop graphic tees",
+  description: `Explore graphic T-shirts from ${brand.name}.`,
 };
 
 export default async function ShopPage() {
@@ -17,9 +17,9 @@ export default async function ShopPage() {
         <Image src="/images/speechless-product-hero-more-than-words-v3.webp" alt="The More Than Words T-shirt displayed on a colorful studio set" fill sizes="100vw" priority />
         <div className="sl-shop-hero__veil" />
         <div className="shell shell--wide sl-shop-hero__content">
-          <p className="sl-kicker">The founding collection</p>
-          <h1>Wear what<br />matters.</h1>
-          <p>Four deliberately different adult T-shirts: direct, supportive, bold, and subtle. Choose the message that feels right for you.</p>
+          <p className="sl-kicker">Four tees. Four different moods.</p>
+          <h1>Pick your<br />favorite.</h1>
+          <p>Big graphics, quieter statements, and one front-and-back surprise. Start with the shirt you would reach for first.</p>
         </div>
       </section>
       <ShopCatalog products={products} />

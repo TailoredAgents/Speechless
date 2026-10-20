@@ -5,12 +5,11 @@ export const metadata: Metadata = { title: "Privacy Notice", description: `Priva
 
 export default function PrivacyPage() {
   return <Policy title="Privacy notice" updated="Prelaunch notice — October 18, 2026">
-    <h2>Our current website</h2><p>{brand.name} is preparing its founding collection. Ordering is not open yet, and saving a design does not create a purchase or reservation.</p>
-    <h2>Information you provide</h2><p>We store the email address you submit to the first-drop list. If you use the contact form, we store your name, email address, selected topic, message, and consent so the team can respond.</p>
-    <h2>First-party website activity</h2><p>We record limited first-party events such as page views, product views, saved designs, contact submissions, and launch-list signups. We do not use this website to collect medical information, create advertising profiles, or track you across unrelated websites.</p>
-    <h2>Saved designs</h2><p>Your saved designs are stored in your browser on your device. Clearing browser storage removes them. They are not an order and do not reserve inventory.</p>
+    <h2>Our current website</h2><p>{brand.name} is preparing its first collection. Ordering is not open yet.</p>
+    <h2>Information you provide</h2><p>We store the email address you submit to the product-update list. If you use the contact form, we store your name, email address, selected topic, message, and consent so the team can respond.</p>
+    <h2>First-party website activity</h2><p>We record limited first-party events such as page views, product views, contact submissions, and email-list signups. We do not use this website to collect medical information, create advertising profiles, or track you across unrelated websites.</p>
     <h2>Service providers</h2><p>Our hosting and database providers process the technical information needed to operate this website. Additional providers and terms will be added before commerce opens.</p>
-    <h2>Email choices</h2><p>Joining the first-drop list gives us permission to send relevant launch updates. Every marketing message will include an unsubscribe option once email delivery begins.</p>
+    <h2>Email choices</h2><p>Joining the email list gives us permission to send relevant product and release updates. Every marketing message will include an unsubscribe option once email delivery begins.</p>
     <h2>Your choices</h2><p>You may use the contact form to ask about access, correction, or deletion of information you submitted.</p>
     <h2>Updates</h2><p>This notice will be updated with final business contact information, retention details, and any region-specific disclosures before public commerce opens.</p>
   </Policy>;

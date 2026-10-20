@@ -2,24 +2,21 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Heart, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Wordmark } from "@/components/wordmark";
-import { useStore } from "@/components/store-provider";
 import { brand } from "@/config/brand";
 
 const navItems = [
   { label: "Shop", href: "/shop" },
-  { label: "Find Your Message", href: "/comfort-finder" },
-  { label: "For Me", href: "/collections/for-me" },
-  { label: "For Families", href: "/collections/family-caregivers" },
+  { label: "Find Your Tee", href: "/comfort-finder" },
   { label: "Why Speechless", href: "/our-approach" },
+  { label: "FAQ", href: "/faq" },
 ];
 
 export function Header() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
-  const { itemCount, openCart } = useStore();
   const menuRef = useRef<HTMLDivElement>(null);
   const menuTriggerRef = useRef<HTMLButtonElement>(null);
 
@@ -66,11 +63,7 @@ export function Header() {
             ))}
           </nav>
           <div className="header-actions">
-            <Link href="/shop" className="header-shop-button">Shop collection</Link>
-            <button className="icon-button bag-button" onClick={openCart} aria-label={`Open saved designs with ${itemCount} items`}>
-              <Heart size={19} />
-              {itemCount > 0 && <span>{itemCount}</span>}
-            </button>
+            <Link href="/shop" className="header-shop-button">Shop the tees</Link>
           </div>
         </div>
       </header>
@@ -84,13 +77,13 @@ export function Header() {
         <nav aria-label="Mobile navigation">
           {navItems.map((item, index) => (
             <Link key={item.href} href={item.href} onClick={() => setMenuOpen(false)} style={{ transitionDelay: `${index * 35}ms` }}>
-              <span>0{index + 1}</span>{item.label}
+              {item.label}
             </Link>
           ))}
         </nav>
         <div className="mobile-menu__footer">
-          <p>Different ways to communicate.<br />One community.</p>
-          <Link href="/our-approach" className="text-link">What we stand for</Link>
+          <p>Bold tees. Good energy.<br />More than words.</p>
+          <Link href="/our-approach" className="text-link">Why Speechless</Link>
         </div>
       </div>
     </>
