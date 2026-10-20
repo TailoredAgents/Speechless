@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title desc" shape-rendering="geometricPrecision">
+  <title id="title">Speechless signal mark</title>
+  <desc id="desc">A custom H with a coral signal stroke and yellow signal dot.</desc>
+  <rect width="128" height="128" rx="22" fill="#171717"/>
+  <path d="M29 24h20v80H29V24Zm50 0h20v80H79V24Z" fill="#fffaf1"/>
+  <path d="m43 62 43-21v22L43 84V62Z" fill="#e96845"/>
+  <circle cx="104" cy="101" r="8" fill="#f2b632"/>
+</svg>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" role="img" aria-labelledby="title desc">
+  <title id="title">Speechless Open Channel logo direction</title>
+  <desc id="desc">A compact stacked Speechless wordmark separated by a blue communication line ending in a coral point.</desc>
+  <g fill="#171717" font-family="Arial Black, Arial, sans-serif" font-size="112" font-weight="900" letter-spacing="-5">
+    <text x="24" y="115" textLength="570" lengthAdjust="spacingAndGlyphs">SPEECH</text>
+    <text x="155" y="239" textLength="392" lengthAdjust="spacingAndGlyphs">LESS</text>
+  </g>
+  <path d="M25 145h520" stroke="#2454D8" stroke-width="16"/>
+  <circle cx="575" cy="145" r="18" fill="#E96845"/>
+  <path d="M640 65h430" stroke="#171717" stroke-width="3"/>
+  <text x="640" y="111" fill="#171717" font-family="Arial, sans-serif" font-size="22" font-weight="800" letter-spacing="6">EVERY FORM</text>
+  <text x="640" y="154" fill="#171717" font-family="Georgia, serif" font-size="48" font-style="italic">of communication</text>
+  <text x="640" y="205" fill="#171717" font-family="Arial, sans-serif" font-size="22" font-weight="800" letter-spacing="6">BELONGS HERE</text>
+  <circle cx="1086" cy="201" r="12" fill="#F2B632" stroke="#171717" stroke-width="4"/>
+</svg>

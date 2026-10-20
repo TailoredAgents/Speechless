@@ -32,10 +32,9 @@ body { background: var(--sl-cream); color: var(--sl-ink); }
 /* Brand chrome */
 .site-header { height: 5.65rem; background: rgba(246, 238, 223, .96); border-bottom-color: var(--sl-line); }
 .site-header__inner { grid-template-columns: 15rem 1fr auto; }
-.wordmark { display: inline-flex; align-items: center; gap: .32rem; font-size: 1.32rem; font-weight: 900; letter-spacing: .1em; }
-.wordmark span { font: inherit; letter-spacing: inherit; }
-.wordmark i { position: static; width: .36rem; height: .36rem; background: var(--sl-yellow); }
-.wordmark > span { color: var(--sl-coral); transform: skew(-10deg); }
+.wordmark { width: 11.75rem; display: inline-flex; color: var(--sl-ink); }
+.wordmark svg { width: 100%; height: auto; display: block; overflow: visible; }
+.wordmark--inverted { color: white; }
 .desktop-nav a { font-size: .75rem; font-weight: 750; letter-spacing: .045em; }
 .header-shop-button { min-height: 2.75rem; padding: .7rem 1rem; display: inline-flex; align-items: center; background: var(--sl-ink); color: white; font-size: .72rem; font-weight: 850; letter-spacing: .06em; text-transform: uppercase; transition: background .25s, transform .25s; }
 .header-shop-button:hover { background: var(--sl-cobalt); transform: translateY(-2px); }
@@ -288,7 +287,7 @@ body { background: var(--sl-cream); color: var(--sl-ink); }
 }
 
 @media (max-width: 760px) {
-  .site-header__inner { grid-template-columns: 3rem 1fr 5rem; }.wordmark { font-size: 1rem; }.header-shop-button { display: none; }
+  .site-header__inner { grid-template-columns: 3rem 1fr 5rem; }.wordmark { width: 9.75rem; }.header-shop-button { display: none; }
   .sl-hero { min-height: 46rem; }.sl-hero > img { object-position: 66% center; }.sl-hero__wash { background: linear-gradient(90deg, rgba(246,238,223,.96) 0%, rgba(246,238,223,.78) 46%, rgba(246,238,223,.08) 100%); }.sl-hero__copy { width: 75%; padding-left: 1vw; }.sl-hero h1 { font-size: clamp(4.1rem, 17vw, 6.2rem); }.sl-hero__copy > p:not(.sl-kicker) { font-size: .9rem; }.sl-hero__stamp { display: none; }.sl-hero__art { left: 65%; top: 30%; width: 21%; opacity: .42; }
   .sl-belief-bar { justify-content: flex-start; overflow-x: auto; white-space: nowrap; }.sl-belief-bar span { flex: 0 0 auto; }
   .sl-heading { grid-template-columns: 1fr; gap: 1.4rem; }.sl-heading h2 { font-size: 3.8rem; }

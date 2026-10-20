@@ -88,11 +88,9 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .site-header__inner { height: 100%; display: grid; grid-template-columns: 13.5rem 1fr auto; align-items: center; }
 .site-logo { justify-self: start; }
 .wordmark {
-  position: relative; display: inline-block;
-  font-size: 1.14rem; line-height: 1; font-weight: 650; letter-spacing: .16em;
+  width: 11.75rem; display: inline-flex; color: var(--charcoal);
 }
-.wordmark span { font-family: var(--font-serif), Georgia, serif; font-weight: 400; letter-spacing: .08em; font-style: italic; }
-.wordmark i { position: absolute; right: -.3rem; top: -.25rem; width: .23rem; height: .23rem; border-radius: 50%; background: var(--peach); }
+.wordmark svg { width: 100%; height: auto; display: block; overflow: visible; }
 .wordmark--inverted { color: white; }
 .desktop-nav { display: flex; gap: clamp(1.2rem, 2vw, 2.45rem); align-items: center; justify-content: center; }
 .desktop-nav a { position: relative; font-size: .74rem; font-weight: 650; letter-spacing: .055em; }
@@ -325,7 +323,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
   :root { --shell: min(90vw, 1440px); }
   .shell--wide { width: 92vw; }
   .section { padding-block: 5.5rem; }
-  .wordmark { font-size: .95rem; }
+  .wordmark { width: 9.75rem; }
   .hero { grid-template-rows: 51% 49%; }
   .hero__copy { padding-top: .85rem; }
   .hero__copy .eyebrow { font-size: .62rem; }

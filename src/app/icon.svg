@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title" shape-rendering="geometricPrecision">
+  <title id="title">Speechless</title>
+  <rect width="512" height="512" rx="88" fill="#171717"/>
+  <path d="M116 96h80v320h-80V96Zm200 0h80v320h-80V96Z" fill="#fffaf1"/>
+  <path d="m172 248 172-84v88l-172 84v-88Z" fill="#e96845"/>
+  <circle cx="416" cy="404" r="32" fill="#f2b632"/>
+</svg>

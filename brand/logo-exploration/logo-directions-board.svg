@@ -1,0 +1,183 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 2400" role="img" aria-labelledby="boardTitle boardDesc">
+  <title id="boardTitle">Speechless logo directions</title>
+  <desc id="boardDesc">Three logo systems shown as primary wordmarks, website headers, social icons, and garment neck labels.</desc>
+  <defs>
+    <filter id="shadow" x="-15%" y="-15%" width="130%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="24" flood-color="#2A2118" flood-opacity=".10"/>
+    </filter>
+    <style>
+      .sans{font-family:Arial,Helvetica,sans-serif}.heavy{font-family:'Arial Black',Arial,sans-serif;font-weight:900}.serif{font-family:Georgia,'Times New Roman',serif}.label{font-family:Arial,Helvetica,sans-serif;font-size:18px;font-weight:800;letter-spacing:5px}.title{font-family:'Arial Black',Arial,sans-serif;font-size:54px;font-weight:900;letter-spacing:-3px}.body{font-family:Arial,Helvetica,sans-serif;font-size:22px;fill:#5B554D}.micro{font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:800;letter-spacing:2.4px}.nav{font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;letter-spacing:.5px}.caption{font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:800;letter-spacing:2.5px}.rule{stroke:#171717;stroke-opacity:.16}.card{fill:#FFFAF1;stroke:#171717;stroke-opacity:.14}.ink{fill:#171717}.coral{fill:#E96845}.blue{fill:#2454D8}.yellow{fill:#F2B632}.cream{fill:#F6EEDF}.paper{fill:#FFFAF1}
+    </style>
+  </defs>
+
+  <rect width="1800" height="2400" fill="#F6EEDF"/>
+  <rect x="0" y="0" width="1800" height="18" fill="#2454D8"/>
+  <text x="82" y="92" class="label" fill="#E96845">SPEECHLESS / IDENTITY STUDY 01</text>
+  <text x="78" y="180" class="title ink" font-size="76">Three ways to make the name feel owned.</text>
+  <text x="82" y="228" class="body">A fashion-first logo study tested where the identity will actually live.</text>
+  <circle cx="1680" cy="122" r="58" fill="#F2B632" stroke="#171717" stroke-width="3"/>
+  <text x="1680" y="132" text-anchor="middle" class="heavy" font-size="28" fill="#171717">01</text>
+
+  <!-- Direction 01 -->
+  <rect x="60" y="285" width="1680" height="590" class="card" filter="url(#shadow)"/>
+  <rect x="60" y="285" width="18" height="590" fill="#E96845"/>
+  <text x="112" y="344" class="label" fill="#E96845">DIRECTION 01 / RECOMMENDED</text>
+  <text x="108" y="402" class="title ink">Signal Cut</text>
+  <text x="109" y="442" class="body">Direct, ownable, and closest to the visual confidence of the storefront.</text>
+
+  <g transform="translate(105 472) scale(.76)">
+    <text x="0" y="166" class="heavy ink" font-size="142" letter-spacing="-7" textLength="475" lengthAdjust="spacingAndGlyphs">SPEEC</text>
+    <text x="630" y="166" class="heavy ink" font-size="142" letter-spacing="-7" textLength="390" lengthAdjust="spacingAndGlyphs">LESS</text>
+    <path d="M498 42h28v132h-28zM582 42h28v132h-28z" fill="#171717"/>
+    <path d="M502 112l102-42v26l-102 42z" fill="#E96845"/>
+    <circle cx="1066" cy="145" r="17" fill="#F2B632" stroke="#171717" stroke-width="5"/>
+    <text x="4" y="222" class="sans ink" font-size="18" font-weight="700" letter-spacing="7">MORE THAN WORDS</text>
+  </g>
+
+  <g transform="translate(1090 475)">
+    <rect width="170" height="170" rx="2" fill="#171717"/>
+    <path d="M40 34h24v103H40zM105 34h24v103h-24z" fill="#FFFAF1"/>
+    <path d="M43 86l83-35v23L43 109z" fill="#E96845"/>
+    <circle cx="137" cy="129" r="10" fill="#F2B632"/>
+    <text x="85" y="196" text-anchor="middle" class="caption ink">SOCIAL MARK</text>
+  </g>
+
+  <g transform="translate(1310 475)">
+    <rect width="360" height="170" rx="2" fill="#171717"/>
+    <rect x="18" y="18" width="324" height="134" fill="none" stroke="#FFFAF1" stroke-opacity=".32"/>
+    <text x="170" y="82" text-anchor="end" class="heavy" font-size="25" fill="#FFFAF1" letter-spacing=".2">SPEEC</text>
+    <path d="M177 59h5v27h-5zM193 59h5v27h-5z" fill="#FFFAF1"/>
+    <path d="M178 72l19-8v6l-19 8z" fill="#E96845"/>
+    <text x="205" y="82" class="heavy" font-size="25" fill="#FFFAF1" letter-spacing=".2">LESS</text>
+    <text x="180" y="116" text-anchor="middle" class="micro" fill="#F2B632">MORE THAN WORDS</text>
+    <text x="180" y="196" text-anchor="middle" class="caption ink">WOVEN LABEL</text>
+  </g>
+
+  <g transform="translate(108 720)">
+    <rect width="900" height="112" rx="2" fill="#F6EEDF" stroke="#171717" stroke-opacity=".18"/>
+    <text x="28" y="65" class="heavy ink" font-size="28" letter-spacing="-1.5">SPEEC</text>
+    <path d="M134 39h6v29h-6zM151 39h6v29h-6z" fill="#171717"/>
+    <path d="M135 53l21-8v6l-21 8z" fill="#E96845"/>
+    <text x="164" y="65" class="heavy ink" font-size="28" letter-spacing="-1.5">LESS</text>
+    <circle cx="235" cy="61" r="4.5" fill="#F2B632" stroke="#171717" stroke-width="1.5"/>
+    <text x="466" y="62" class="nav ink">SHOP</text>
+    <text x="525" y="62" class="nav ink">FIND YOUR MESSAGE</text>
+    <text x="673" y="62" class="nav ink">FOR FAMILIES</text>
+    <rect x="790" y="34" width="82" height="42" fill="#171717"/>
+    <text x="831" y="60" text-anchor="middle" class="micro" fill="#FFFAF1" font-size="9">SHOP</text>
+    <text x="0" y="140" class="caption ink">WEBSITE HEADER</text>
+  </g>
+  <text x="1140" y="764" class="label" fill="#E96845">WHY IT LEADS</text>
+  <text x="1140" y="801" class="body">Best small-size clarity. A custom H creates</text>
+  <text x="1140" y="832" class="body">a signature without breaking apart the name.</text>
+
+  <!-- Direction 02 -->
+  <rect x="60" y="920" width="1680" height="590" class="card" filter="url(#shadow)"/>
+  <rect x="60" y="920" width="18" height="590" fill="#2454D8"/>
+  <text x="112" y="979" class="label" fill="#2454D8">DIRECTION 02 / MOVEMENT-LED</text>
+  <text x="108" y="1037" class="title ink">Open Channel</text>
+  <text x="109" y="1077" class="body">A more editorial system built around the idea that communication keeps moving.</text>
+
+  <g transform="translate(105 1104) scale(.74)">
+    <g class="heavy ink" font-size="112" letter-spacing="-5">
+      <text x="0" y="115" textLength="570" lengthAdjust="spacingAndGlyphs">SPEECH</text>
+      <text x="131" y="239" textLength="392" lengthAdjust="spacingAndGlyphs">LESS</text>
+    </g>
+    <path d="M1 145h520" stroke="#2454D8" stroke-width="16"/>
+    <circle cx="551" cy="145" r="18" fill="#E96845"/>
+    <path d="M616 65h430" stroke="#171717" stroke-width="3"/>
+    <text x="616" y="111" class="sans ink" font-size="22" font-weight="800" letter-spacing="6">EVERY FORM</text>
+    <text x="616" y="154" class="serif ink" font-size="48" font-style="italic">of communication</text>
+    <text x="616" y="205" class="sans ink" font-size="22" font-weight="800" letter-spacing="6">BELONGS HERE</text>
+    <circle cx="1062" cy="201" r="12" fill="#F2B632" stroke="#171717" stroke-width="4"/>
+  </g>
+
+  <g transform="translate(1090 1110)">
+    <rect width="170" height="170" rx="2" fill="#2454D8"/>
+    <path d="M37 58h74" stroke="#FFFAF1" stroke-width="17"/>
+    <path d="M58 86h75" stroke="#FFFAF1" stroke-width="17"/>
+    <path d="M37 114h74" stroke="#FFFAF1" stroke-width="17"/>
+    <circle cx="137" cy="114" r="10" fill="#F2B632"/>
+    <text x="85" y="196" text-anchor="middle" class="caption ink">SOCIAL MARK</text>
+  </g>
+
+  <g transform="translate(1310 1110)">
+    <rect width="360" height="170" rx="2" fill="#171717"/>
+    <text x="180" y="70" text-anchor="middle" class="heavy" font-size="29" fill="#FFFAF1" letter-spacing="1">SPEECH</text>
+    <path d="M90 91h164" stroke="#2454D8" stroke-width="7"/>
+    <circle cx="271" cy="91" r="7" fill="#E96845"/>
+    <text x="180" y="126" text-anchor="middle" class="heavy" font-size="24" fill="#FFFAF1">LESS</text>
+    <text x="180" y="196" text-anchor="middle" class="caption ink">WOVEN LABEL</text>
+  </g>
+
+  <g transform="translate(108 1355)">
+    <rect width="900" height="112" rx="2" fill="#F6EEDF" stroke="#171717" stroke-opacity=".18"/>
+    <g transform="translate(28 20) scale(.29)">
+      <text x="0" y="115" class="heavy ink" font-size="112" letter-spacing="-5" textLength="570" lengthAdjust="spacingAndGlyphs">SPEECH</text>
+      <text x="131" y="239" class="heavy ink" font-size="112" letter-spacing="-5" textLength="392" lengthAdjust="spacingAndGlyphs">LESS</text>
+      <path d="M1 145h520" stroke="#2454D8" stroke-width="16"/>
+      <circle cx="551" cy="145" r="18" fill="#E96845"/>
+    </g>
+    <text x="466" y="62" class="nav ink">SHOP</text>
+    <text x="525" y="62" class="nav ink">FIND YOUR MESSAGE</text>
+    <text x="673" y="62" class="nav ink">FOR FAMILIES</text>
+    <rect x="790" y="34" width="82" height="42" fill="#171717"/>
+    <text x="831" y="60" text-anchor="middle" class="micro" fill="#FFFAF1" font-size="9">SHOP</text>
+    <text x="0" y="140" class="caption ink">WEBSITE HEADER</text>
+  </g>
+  <text x="1140" y="1399" class="label" fill="#2454D8">THE TRADEOFF</text>
+  <text x="1140" y="1436" class="body">Strong story and memorable rhythm, but the</text>
+  <text x="1140" y="1467" class="body">stacked lockup needs more header space.</text>
+
+  <!-- Direction 03 -->
+  <rect x="60" y="1555" width="1680" height="590" class="card" filter="url(#shadow)"/>
+  <rect x="60" y="1555" width="18" height="590" fill="#F2B632"/>
+  <text x="112" y="1614" class="label" fill="#B74327">DIRECTION 03 / HUMAN-LED</text>
+  <text x="108" y="1672" class="title ink">Human Signal</text>
+  <text x="109" y="1712" class="body">Warm, expressive, and closely connected to the site's editorial typography.</text>
+
+  <g transform="translate(105 1743) scale(.76)">
+    <text x="0" y="166" class="heavy ink" font-size="138" letter-spacing="-7" textLength="620" lengthAdjust="spacingAndGlyphs">SPEECH</text>
+    <text x="606" y="165" class="serif coral" font-size="154" font-style="italic" letter-spacing="-9" textLength="385" lengthAdjust="spacingAndGlyphs">less</text>
+    <circle cx="1036" cy="143" r="17" fill="#F2B632" stroke="#171717" stroke-width="5"/>
+    <text x="4" y="222" class="sans ink" font-size="18" font-weight="700" letter-spacing="7">COMMUNICATION BEYOND SPEECH</text>
+  </g>
+
+  <g transform="translate(1090 1745)">
+    <rect width="170" height="170" rx="85" fill="#E96845"/>
+    <text x="72" y="125" text-anchor="middle" class="serif" font-size="124" font-style="italic" fill="#FFFAF1">s</text>
+    <circle cx="132" cy="125" r="10" fill="#F2B632" stroke="#171717" stroke-width="3"/>
+    <text x="85" y="196" text-anchor="middle" class="caption ink">SOCIAL MARK</text>
+  </g>
+
+  <g transform="translate(1310 1745)">
+    <rect width="360" height="170" rx="2" fill="#171717"/>
+    <text x="174" y="94" text-anchor="end" class="heavy" font-size="30" fill="#FFFAF1">SPEECH</text>
+    <text x="177" y="96" class="serif" font-size="49" font-style="italic" fill="#E96845">less</text>
+    <circle cx="279" cy="88" r="7" fill="#F2B632"/>
+    <text x="180" y="132" text-anchor="middle" class="micro" fill="#FFFAF1">MORE THAN WORDS</text>
+    <text x="180" y="196" text-anchor="middle" class="caption ink">WOVEN LABEL</text>
+  </g>
+
+  <g transform="translate(108 1990)">
+    <rect width="900" height="112" rx="2" fill="#F6EEDF" stroke="#171717" stroke-opacity=".18"/>
+    <text x="28" y="67" class="heavy ink" font-size="28" letter-spacing="-1.5">SPEECH</text>
+    <text x="162" y="67" class="serif" font-size="38" font-style="italic" fill="#E96845">less</text>
+    <circle cx="235" cy="61" r="4.5" fill="#F2B632" stroke="#171717" stroke-width="1.5"/>
+    <text x="466" y="62" class="nav ink">SHOP</text>
+    <text x="525" y="62" class="nav ink">FIND YOUR MESSAGE</text>
+    <text x="673" y="62" class="nav ink">FOR FAMILIES</text>
+    <rect x="790" y="34" width="82" height="42" fill="#171717"/>
+    <text x="831" y="60" text-anchor="middle" class="micro" fill="#FFFAF1" font-size="9">SHOP</text>
+    <text x="0" y="140" class="caption ink">WEBSITE HEADER</text>
+  </g>
+  <text x="1140" y="2034" class="label" fill="#B74327">THE TRADEOFF</text>
+  <text x="1140" y="2071" class="body">The warmest option, though the italic half is</text>
+  <text x="1140" y="2102" class="body">less legible at tiny sizes and more trend-led.</text>
+
+  <rect x="0" y="2205" width="1800" height="195" fill="#171717"/>
+  <text x="82" y="2270" class="label" fill="#F2B632">RECOMMENDATION</text>
+  <text x="78" y="2340" class="title" fill="#FFFAF1">Refine Signal Cut into the production identity.</text>
+  <path d="M1618 2242h26l-43 123h-26z" fill="#E96845"/>
+  <circle cx="1684" cy="2345" r="15" fill="#F2B632"/>
+</svg>

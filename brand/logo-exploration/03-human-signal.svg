@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 260" role="img" aria-labelledby="title desc">
+  <title id="title">Speechless Human Signal logo direction</title>
+  <desc id="desc">A strong uppercase Speech word paired with a warm coral italic less and a yellow signal dot.</desc>
+  <text x="24" y="166" fill="#171717" font-family="Arial Black, Arial, sans-serif" font-size="138" font-weight="900" letter-spacing="-7" textLength="620" lengthAdjust="spacingAndGlyphs">SPEECH</text>
+  <text x="630" y="165" fill="#E96845" font-family="Georgia, Times New Roman, serif" font-size="154" font-style="italic" letter-spacing="-9" textLength="385" lengthAdjust="spacingAndGlyphs">less</text>
+  <circle cx="1060" cy="143" r="17" fill="#F2B632" stroke="#171717" stroke-width="5"/>
+  <text x="28" y="222" fill="#171717" font-family="Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="7">COMMUNICATION BEYOND SPEECH</text>
+</svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 102" role="img" aria-labelledby="title desc" shape-rendering="geometricPrecision">
+  <title id="title">Speechless</title><desc id="desc">Reversed Speechless wordmark for dark backgrounds.</desc>
+  <defs>
+    <path id="s" d="M74 477 362 505q26-145 105.5-213T682 224q143 0 215.5 60.5T970 426q0 52-30.5 88.5T833 578q-52 18-237 64-238 59-334 145-135 121-135 295 0 112 63.5 209.5T373.5 1440Q493 1491 662 1491q276 0 415.5-121T1224 1047l-296-13q-19 113-81.5 162.5T659 1246q-129 0-202-53-47-34-47-91 0-52 44-89 56-47 272-98t319.5-105.5Q1149 755 1207.5 660t58.5-233q0-126-70-236T998 27.5Q870-26 679-26q-278 0-427 128.5T74 477Z"/>
+    <path id="p" fill-rule="evenodd" d="M149 0v1466h475q270 0 352-22 126-33 211-143.5t85-285.5q0-135-49-227t-124.5-144.5Q1023 591 945 574q-106-21-307-21H445V0Zm296 1218V802h162q175 0 234 23t92.5 72q33.5 49 33.5 114 0 80-47 132t-119 65q-53 10-213 10Z"/>
+    <path id="e" d="M149 0v1466h1087v-248H445V893h736V646H445V247h819V0Z"/><path id="c" d="m1087 539 287-91q-66-240-219.5-356.5T765-25q-292 0-480 199.5T97 720q0 366 189 568.5T783 1491q269 0 437-159 100-94 150-270l-293-70q-26 114-108.5 180T768 1238q-163 0-264.5-117T402 742q0-278 100-396t260-118q118 0 203 75t122 236Z"/><path id="l" d="M157 0v1454h296V247h736V0Z"/>
+  </defs>
+  <g transform="translate(0 98) scale(.064 -.064)" fill="#fffaf1"><use href="#s"/><use href="#p" transform="translate(1366)"/><use href="#e" transform="translate(2732)"/><use href="#e" transform="translate(4098)"/><use href="#c" transform="translate(5464)"/><path d="M7093 0h296v1466h-296V0Zm876 0h296v1466h-296V0Z"/><use href="#l" transform="translate(8422)"/><use href="#e" transform="translate(9673)"/><use href="#s" transform="translate(11039)"/><use href="#s" transform="translate(12405)"/></g>
+  <path d="m470.4 64.7 42.2-19.2v16.7l-42.2 19.2V64.7Z" fill="#e96845"/><circle cx="907" cy="83" r="9" fill="#f2b632" stroke="#fffaf1" stroke-width="3"/>
+</svg>

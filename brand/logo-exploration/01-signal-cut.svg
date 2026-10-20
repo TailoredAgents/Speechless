@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 260" role="img" aria-labelledby="title desc">
+  <title id="title">Speechless Signal Cut logo direction</title>
+  <desc id="desc">Bold uppercase Speechless wordmark with a custom H formed by a coral signal stroke and finished with a yellow signal dot.</desc>
+  <g fill="#171717">
+    <text x="24" y="166" font-family="Arial Black, Arial, sans-serif" font-size="142" font-weight="900" letter-spacing="-7" textLength="475" lengthAdjust="spacingAndGlyphs">SPEEC</text>
+    <text x="654" y="166" font-family="Arial Black, Arial, sans-serif" font-size="142" font-weight="900" letter-spacing="-7" textLength="390" lengthAdjust="spacingAndGlyphs">LESS</text>
+  </g>
+  <path d="M522 42h28v132h-28zM606 42h28v132h-28z" fill="#171717"/>
+  <path d="M526 112l102-42v26l-102 42z" fill="#E96845"/>
+  <circle cx="1090" cy="145" r="17" fill="#F2B632" stroke="#171717" stroke-width="5"/>
+  <text x="28" y="222" fill="#171717" font-family="Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="7">MORE THAN WORDS</text>
+</svg>
